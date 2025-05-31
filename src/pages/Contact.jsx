@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Send, Phone, Mail, MapPin, Loader2, Plus } from 'lucide-react';
 import "../styles/App.css";
+import "../styles/contact.css";
 
 
 export default function ModernContact() {
@@ -46,28 +47,28 @@ export default function ModernContact() {
 
 
   return (
-    <div className="min-h-screen relative overflow-hidden bg-gradient-to-b from-gray-900 via-black to-black text-white">
+    <div className="contact-page">
       {/* World Map Background */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="w-full h-full bg-gradient-to-br from-gray-800 to-gray-900" />
-      </div>
+      <div className="contact-background-overlay"></div>
       
-      <div className="container mx-auto px-4 py-16 relative">
-        <div className="max-w-6xl mx-auto">
+      <div className="contact-container">
+        <div className="contact-content-wrapper">
           {/* Header Section */}
-          <div className="text-center mb-16">
-            <h1 className="custom-gradient text-6xl font-bold text-transparent mb-4">
+          <div className="contact-header">
+            <h1 className="contact-title">
               Contact us
             </h1>
-            <p className="text-gray-400 text-lg">Ask for a quotation from us!</p>
+            <p className="contact-subtitle">Ask for a quotation from us!</p>
           </div>
 
-          <div className="grid lg:grid-cols-3 gap-12">
+          <div className="contact-grid">
             {/* Contact Form */}
-            <div className="lg:col-span-2 bg-gray-900/50 backdrop-blur-lg rounded-2xl p-8 shadow-xl">
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="group">
+            <div className="contact-form-card">
+              <form onSubmit={handleSubmit} className="contact-form">
+                <div className="form-group">
+                  <label htmlFor="name">Your Name</label>
                   <input
+                    id="name"
                     type="text"
                     required
                     className="w-full bg-transparent border-b-2 border-gray-600 py-3 px-4 text-white placeholder-gray-500 focus:outline-none focus:border-yellow-400 transition-all"

@@ -1,9 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import { ChevronDown } from 'lucide-react';
 
 const Dropdown = ({ title, links, isMobile }) => {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef(null);
+  const timeoutRef = useRef(null);
   const [position, setPosition] = useState('left');
 
   useEffect(() => {
@@ -19,72 +21,84 @@ const Dropdown = ({ title, links, isMobile }) => {
     }
   }, [isMobile]);
 
-  // Added: Adjust dropdown position dynamically to prevent overflow
+  // Dynamic position adjustment
   useEffect(() => {
     if (dropdownRef.current && isOpen && !isMobile) {
       const dropdownRect = dropdownRef.current.getBoundingClientRect();
-      const isOverflowingRight = dropdownRect.right < window.innerWidth;
-
-      // Adjust position to right if it overflows the screen
+      const isOverflowingRight = dropdownRect.right > window.innerWidth - 20;
       setPosition(isOverflowingRight ? 'right' : 'left');
     }
   }, [isOpen, isMobile]);
 
-  // Leveraged handleMouseEnter and handleMouseLeave events to make it dropdown as soon as cursor hovers.
   const handleMouseEnter = () => {
     if (!isMobile) {
+      if (timeoutRef.current) clearTimeout(timeoutRef.current);
       setIsOpen(true);
     }
   };
 
   const handleMouseLeave = () => {
     if (!isMobile) {
-      setIsOpen(false);
+      timeoutRef.current = setTimeout(() => {
+        setIsOpen(false);
+      }, 150);
+    }
+  };
+
+  const handleClick = () => {
+    if (isMobile) {
+      setIsOpen(!isOpen);
     }
   };
 
   return (
     <div
       ref={dropdownRef}
-      className={`${isMobile ? 'w-full' : 'relative z-50'}`}
+      className={`dropdown-container ${isMobile ? 'dropdown-mobile' : 'dropdown-desktop'}`}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
       <button
-        className="text-white font-semibold p-2 hover:text-[#ef8e35] transition-colors duration-300 w-full text-left rounded-md"
+        className={`dropdown-trigger ${isOpen ? 'dropdown-trigger-active' : ''}`}
+        onClick={handleClick}
+        aria-expanded={isOpen}
+        aria-haspopup="true"
       >
-        {title}
+        <span className="dropdown-title">{title}</span>
+        <ChevronDown 
+          className={`dropdown-icon ${isOpen ? 'dropdown-icon-rotated' : ''}`} 
+          size={16} 
+        />
+        <div className="dropdown-trigger-bg"></div>
       </button>
+
       <div
-        className={`${
-          isMobile
-            ? 'w-full pl-4'
-            : `absolute bg-gray-800 rounded-lg shadow-lg min-w-[150px] ${
-                position === 'right' ? 'right-0' : 'left-0' // Modified: Dynamic position class
-              }`
-        } ${
-          isOpen
-            ? 'opacity-100 transform translate-y-0'
-            : 'opacity-0 transform -translate-y-2 pointer-events-none'
-        } transition-all duration-300 ease-in-out`}
+        className={`dropdown-menu ${isOpen ? 'dropdown-menu-open' : ''} ${
+          position === 'right' ? 'dropdown-menu-right' : 'dropdown-menu-left'
+        } ${isMobile ? 'dropdown-menu-mobile' : 'dropdown-menu-desktop'}`}
       >
-        {isOpen && (
-          <div className={`${isMobile ? 'mt-1' : 'p-2 mt-2'}`}>
+        <div className="dropdown-content">
+          <div className="dropdown-header">
+            <div className="dropdown-glow"></div>
+          </div>
+          
+          <div className="dropdown-links">
             {links.map((link, index) => (
               <Link
                 key={index}
                 to={`/${link.toLowerCase()}`}
-                // Moved comment outside the className attribute
-                className={`block p-2 hover:bg-black hover:text-[#ef8e35] transition-colors duration-300 ${
-                  isMobile ? 'text-gray-300' : 'text-white'
-                } rounded-md`} 
+                className="dropdown-link"
                 onClick={() => setIsOpen(false)}
               >
-                {link}
+                <div className="dropdown-link-content">
+                  <span className="dropdown-link-text">{link}</span>
+                  <div className="dropdown-link-arrow">→</div>
+                </div>
+                <div className="dropdown-link-bg"></div>
               </Link>
             ))}
           </div>
-        )}
+        </div>
       </div>
     </div>
   );

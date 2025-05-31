@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import Dropdown from "./Dropdown";
 import newCompanyLogo from "../assets/fdgcfghgzs.png";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isMobileView, setIsMobileView] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
@@ -17,75 +18,98 @@ const Navbar = () => {
       }
     };
 
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+
     handleResize();
     window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+    window.addEventListener("scroll", handleScroll);
+    
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
+  const navLinks = [
+    { path: "/", label: "Home" },
+    { path: "/services", label: "Services" },
+    { path: "/career", label: "Career" },
+    { path: "/contact", label: "Contact" }
+  ];
+
   return (
-    <nav className="bg-black shadow-lg">
-      <div className="max-w-7xl mx-auto px-4">
-        <div className="flex justify-between items-center h-16">
-          {/* Logo Section */}
-          <div className="flex items-center">
+    <nav className={`navbar-container ${scrolled ? 'navbar-scrolled' : ''}`}>
+      <div className="navbar-content">
+        {/* Logo Section */}
+        <div className="navbar-logo">
+          <div className="logo-wrapper">
             <img
-              className="w-12 h-12 transform hover:scale-110 transition-transform duration-300"
+              className="logo-image"
               src={newCompanyLogo}
               alt="Company Logo"
             />
-            <Link
-              to="/"
-              className="text-white font-bold text-xl ml-2 pt-1 hover:text-[#ef8e35] transition-colors duration-300"
-            >
-              AppOrigo
-            </Link>
+            <div className="logo-glow"></div>
           </div>
+          <Link to="/" className="brand-text">
+            <span className="brand-app">App</span>
+            <span className="brand-origo">Origo</span>
+          </Link>
+        </div>
 
-          {/* Desktop Menu */}
-          <div className="hidden md:flex items-center space-x-4">
-            {["/", "/services", "/career", "/contact"].map((path, index) => (
+        {/* Desktop Menu */}
+        <div className="desktop-menu">
+          <div className="nav-links">
+            {navLinks.map((link, index) => (
               <Link
                 key={index}
-                to={path}
-                className={`text-white font-semibold p-2 hover:text-[#ef8e35] transition-colors duration-300 transform transition-transform duration-500 ease-in-out ${
-                  location.pathname === path ? "border-b-2 border-[#ef8e35] scale-105" : ""
-                }`}
+                to={link.path}
+                className={`nav-link ${location.pathname === link.path ? 'nav-link-active' : ''}`}
               >
-                {path === "/" ? "Home" : path.slice(1).charAt(0).toUpperCase() + path.slice(2)}
+                <span className="nav-link-text">{link.label}</span>
+                <div className="nav-link-underline"></div>
               </Link>
             ))}
             <Dropdown title="About" links={["About", "Mission"]} isMobile={false} />
           </div>
-
-          {/* Mobile Menu Toggle */}
-          <div className="md:hidden">
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="text-white hover:text-[#ef8e35] transition-colors duration-300"
-              aria-label="Toggle menu"
-            >
-              {isOpen ? <X size={24} /> : <Menu size={24} />}
-            </button>
-          </div>
         </div>
 
-        {/* Mobile Menu */}
-        {isOpen && (
-          <div className="md:hidden flex flex-col items-center bg-black py-4 space-y-3 transition-all duration-300">
-            {["/", "/services", "/career", "/contact", "/about", "/mission"].map((path, index) => (
+        {/* Mobile Menu Toggle */}
+        <div className="mobile-toggle">
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="toggle-button"
+            aria-label="Toggle menu"
+          >
+            <div className="toggle-icon">
+              {isOpen ? <X size={24} /> : <Menu size={24} />}
+            </div>
+            <div className="toggle-bg"></div>
+          </button>
+        </div>
+      </div>
+
+      {/* Mobile Menu */}
+      <div className={`mobile-menu ${isOpen ? 'mobile-menu-open' : ''}`}>
+        <div className="mobile-menu-content">
+          <div className="mobile-nav-links">
+            {[...navLinks, { path: "/about", label: "About" }, { path: "/mission", label: "Mission" }].map((link, index) => (
               <Link
                 key={index}
-                to={path}
+                to={link.path}
                 onClick={() => setIsOpen(false)}
-                className={`text-white font-semibold text-lg p-2 hover:text-[#ef8e35] transition-colors duration-300 ${
-                  location.pathname === path ? "border-b-2 border-[#ef8e35]" : ""
-                }`}
+                className={`mobile-nav-link ${location.pathname === link.path ? 'mobile-nav-link-active' : ''}`}
               >
-                {path === "/" ? "Home" : path.slice(1).charAt(0).toUpperCase() + path.slice(2)}
+                <span className="mobile-nav-text">{link.label}</span>
+                <div className="mobile-nav-indicator"></div>
               </Link>
             ))}
           </div>
-        )}
+          
+        </div>
+        
+        <div className="mobile-menu-overlay" onClick={() => setIsOpen(false)}></div>
       </div>
     </nav>
   );

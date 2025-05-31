@@ -3,60 +3,171 @@ import web from "../assets/Services/web.png";
 import app from "../assets/Services/app.png";
 import gd from "../assets/Services/gd.png";
 import { Link } from "react-router-dom";
+import Button, { GlowButton, SecondaryButton } from "../components/Button";
+import "../styles/service.css";
+import "../styles/App.css";
 
 function Services() {
   return (
     <>
       {/* Hero Section */}
-      <section className="bg-gradient-to-b from-gray-900 via-black to-black text-white container mx-auto px-4 py-24 text-center mb-14">
-        <div className="container mx-auto text-center px-4">
-          <h1 className="mx-auto max-w-5xl text-4xl font-bold tracking-tight sm:text-6xl bg-gradient-to-r from-[#ef8e35] to-white bg-clip-text text-transparent mb-10">Our Premium Services</h1>
-          <p className="text-xl mb-8">Explore the wide range of services we offer to help you achieve your mental well-being goals.</p>
-          <Link to="/contact">
-          <button className="bg-[#ef8e35] hover:bg-black text-white font-semibold px-6 py-3 rounded-lg text-lg transition duration-300">
+      <section className="services-hero">
+        <div className="services-hero-content">
+          <h1>Our Premium Services</h1>
+          <p>Explore the wide range of services we offer to help you achieve your digital goals.</p>
+          <Button 
+            as={Link} 
+            to="/contact" 
+            variant="primary"
+          >
             Contact Us
-          </button>
-          </Link>
+          </Button>
         </div>
       </section>
 
       {/* Services Section */}
-      <div className="container mx-auto max-w-6xl px-4 mb-10">
-        <section className="flex flex-col gap-12">
-          {/* Card 1 */}
-          <div className="flex justify-between hover:shadow-lg transition duration-300 scale-105">
-            <div className="flex-1 p-6 text-left">
-              <h2 className="text-2xl font-bold">Web Development</h2>
-              <p>Our team develops fast, secure, and responsive websites, from corporate sites to eCommerce platforms and web apps. Using React, Vue.js, Laravel, and WordPress, we ensure top-notch performance, SEO optimization, and a flawless user experience.</p>
+      <section className="services-main">
+        <div className="services-container">
+          <div className="services-grid">
+            {/* Web Development Service */}
+            <div className="service-card">
+              <div className="service-content">
+                <h2>Web Development</h2>
+                <p>Our team develops fast, secure, and responsive websites, from corporate sites to eCommerce platforms and web apps. Using React, Vue.js, Laravel, and WordPress, we ensure top-notch performance, SEO optimization, and a flawless user experience.</p>
+                <ul className="service-features">
+                  <li>Custom Website Development</li>
+                  <li>E-commerce Solutions</li>
+                  <li>Web Application Development</li>
+                  <li>CMS Development</li>
+                </ul>
+                <Button 
+                  as={Link} 
+                  to="/contact" 
+                  variant="primary"
+                  className="service-cta-btn"
+                >
+                  Get Started
+                </Button>
+              </div>
+              <div className="service-image">
+                <img src={web} alt="Web Development" />
+              </div>
             </div>
-            <div className="w-3/5 h-64">
-              <img src={web} alt="Image 1" className="w-full h-full object-cover rounded-xl" />
-            </div>
-          </div>
 
-          {/* Card 2 */}
-          <div className="flex justify-between hover:shadow-lg transition duration-300 scale-105">
-            <div className="w-3/5 h-64">
-              <img src={app} alt="Image 2" className="w-full h-full object-cover rounded-xl" />
+            {/* App Development Service */}
+            <div className="service-card">
+              <div className="service-image">
+                <img src={app} alt="App Development" />
+              </div>
+              <div className="service-content">
+                <h2>App Development</h2>
+                <p>We build high-performance iOS, Android, and cross-platform apps using the latest technologies like Flutter and React Native. From custom development to API integrations and security, we create seamless, scalable solutions designed for growth.</p>
+                <ul className="service-features">
+                  <li>Native App Development</li>
+                  <li>Cross-platform Solutions</li>
+                  <li>App Maintenance & Support</li>
+                  <li>API Integration</li>
+                </ul>
+                <Button 
+                  as={Link} 
+                  to="/contact" 
+                  variant="primary"
+                  className="service-cta-btn"
+                >
+                  Get Started
+                </Button>
+              </div>
             </div>
-            <div className="flex-1 p-6 text-right">
-              <h2 className="text-2xl font-bold">App Development</h2>
-              <p>We build high-performance iOS, Android, and cross-platform apps using the latest technologies like Flutter and React Native. From custom development to API integrations and security, we create seamless, scalable solutions designed for growth.</p>
-            </div>
-          </div>
 
-          {/* Card 3 */}
-          <div className="flex justify-between hover:shadow-lg transition duration-300 scale-105">
-            <div className="flex-1 p-6 text-left">
-              <h2 className="text-2xl font-bold">Graphics Design</h2>
-              <p>We craft intuitive, user-friendly designs that enhance engagement. Through wireframing, prototyping, and testing, we create responsive, mobile-first interfaces that look great and function perfectly across all devices.</p>
-            </div>
-            <div className="w-3/5 h-64">
-              <img src={gd} alt="Image 3" className="w-full h-full object-cover rounded-xl" />
+            {/* Graphics Design Service */}
+            <div className="service-card">
+              <div className="service-content">
+                <h2>Graphics Design</h2>
+                <p>We craft intuitive, user-friendly designs that enhance engagement. Through wireframing, prototyping, and testing, we create responsive, mobile-first interfaces that look great and function perfectly across all devices.</p>
+                <ul className="service-features">
+                  <li>UI/UX Design</li>
+                  <li>Brand Identity Design</li>
+                  <li>Print & Digital Design</li>
+                  <li>Motion Graphics</li>
+                </ul>
+                <Button 
+                  as={Link} 
+                  to="/contact" 
+                  variant="primary"
+                  className="service-cta-btn"
+                >
+                  Get Started
+                </Button>
+              </div>
+              <div className="service-image">
+                <img src={gd} alt="Graphics Design" />
+              </div>
             </div>
           </div>
-        </section>
-      </div>
+        </div>
+      </section>
+
+      {/* Process Section */}
+      <section className="process-section">
+        <div className="process-container">
+          <div className="process-header">
+            <h2>Our Development Process</h2>
+            <p>We follow a systematic approach to deliver exceptional results</p>
+          </div>
+          <div className="process-steps">
+            <div className="process-step">
+              <div className="step-number">1</div>
+              <div className="step-icon">📋</div>
+              <h3>Discovery</h3>
+              <p>Understanding your requirements and project goals</p>
+            </div>
+            <div className="process-step">
+              <div className="step-number">2</div>
+              <div className="step-icon">🎨</div>
+              <h3>Design</h3>
+              <p>Creating intuitive and engaging user interfaces</p>
+            </div>
+            <div className="process-step">
+              <div className="step-number">3</div>
+              <div className="step-icon">⚡</div>
+              <h3>Development</h3>
+              <p>Building robust and scalable solutions</p>
+            </div>
+            <div className="process-step">
+              <div className="step-number">4</div>
+              <div className="step-icon">🚀</div>
+              <h3>Launch</h3>
+              <p>Deploying and monitoring your project</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="service-cta-section">
+        <div className="service-cta-container">
+          <div className="service-cta-content">
+            <h2>Ready to Start Your Project?</h2>
+            <p>Let's create something amazing together. Contact us today to discuss your project requirements.</p>
+            <div className="cta-buttons-service">
+              <GlowButton 
+                as={Link} 
+                to="/contact"
+                size="large"
+              >
+                Get in Touch
+              </GlowButton>
+              <SecondaryButton 
+                as={Link} 
+                to="/contact"
+                size="large"
+              >
+                Request a Quote
+              </SecondaryButton>
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   );
 }

@@ -1,0 +1,516 @@
+/* Enhanced Terms and Conditions - Professional Legal Document Styling */
+
+/* ===== TERMS HERO SECTION ===== */
+.terms-hero {
+  position: relative;
+  min-height: 40vh;
+  display: flex;
+  align-items: center;
+  background: var(--gradient-dark);
+  overflow: hidden;
+  padding: 4rem 0 2rem;
+}
+
+.terms-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 25% 25%, rgba(240, 142, 53, 0.04) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(14, 165, 233, 0.03) 0%, transparent 50%);
+  z-index: 1;
+}
+
+.terms-hero::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(rgba(240, 142, 53, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(240, 142, 53, 0.02) 1px, transparent 1px);
+  background-size: 50px 50px;
+  z-index: 2;
+  animation: heroGridMove 25s linear infinite;
+}
+
+@keyframes heroGridMove {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(50px, 50px); }
+}
+
+/* ===== MAIN TERMS CONTAINER ===== */
+.terms-and-conditions {
+  position: relative;
+  background: var(--bg-primary);
+  min-height: 100vh;
+  padding-top: 6rem;
+}
+
+/* Enhanced Container */
+.terms-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  position: relative;
+  z-index: 10;
+}
+
+/* ===== TYPOGRAPHY ENHANCEMENTS ===== */
+.terms-and-conditions h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 3rem;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+  position: relative;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.terms-and-conditions h1::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 4px;
+  background: var(--gradient-primary);
+  border-radius: 2px;
+  animation: scaleIn 0.8s ease-out 0.3s both;
+}
+
+.terms-and-conditions h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 3vw, 1.8rem);
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 3rem 0 1.5rem;
+  padding: 1rem 0 0.75rem;
+  border-bottom: 2px solid rgba(240, 142, 53, 0.2);
+  position: relative;
+  transition: all var(--transition-normal);
+}
+
+.terms-and-conditions h2::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 60px;
+  height: 2px;
+  background: var(--gradient-primary);
+  transition: width var(--transition-normal);
+}
+
+.terms-and-conditions h2:hover::before {
+  width: 120px;
+}
+
+/* ===== ENHANCED SECTIONS ===== */
+.terms-and-conditions section {
+  background: var(--bg-card);
+  margin-bottom: 2.5rem;
+  padding: 2.5rem;
+  border-radius: var(--border-radius-lg);
+  border: 1px solid rgba(240, 142, 53, 0.1);
+  box-shadow: var(--shadow-md);
+  backdrop-filter: blur(20px);
+  position: relative;
+  overflow: hidden;
+  transition: all var(--transition-normal);
+  animation: fadeInUp 0.6s ease-out;
+  animation-fill-mode: both;
+}
+
+.terms-and-conditions section:nth-child(1) { animation-delay: 0.1s; }
+.terms-and-conditions section:nth-child(2) { animation-delay: 0.15s; }
+.terms-and-conditions section:nth-child(3) { animation-delay: 0.2s; }
+.terms-and-conditions section:nth-child(4) { animation-delay: 0.25s; }
+.terms-and-conditions section:nth-child(5) { animation-delay: 0.3s; }
+.terms-and-conditions section:nth-child(6) { animation-delay: 0.35s; }
+.terms-and-conditions section:nth-child(7) { animation-delay: 0.4s; }
+.terms-and-conditions section:nth-child(8) { animation-delay: 0.45s; }
+.terms-and-conditions section:nth-child(9) { animation-delay: 0.5s; }
+.terms-and-conditions section:nth-child(10) { animation-delay: 0.55s; }
+.terms-and-conditions section:nth-child(11) { animation-delay: 0.6s; }
+.terms-and-conditions section:nth-child(12) { animation-delay: 0.65s; }
+
+/* Section Hover Effects */
+.terms-and-conditions section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--gradient-primary);
+  transform: scaleX(0);
+  transition: transform var(--transition-normal);
+  z-index: 2;
+}
+
+.terms-and-conditions section:hover::before {
+  transform: scaleX(1);
+}
+
+.terms-and-conditions section::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -30%;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(240, 142, 53, 0.03), transparent);
+  border-radius: 50%;
+  filter: blur(30px);
+  opacity: 0;
+  transition: opacity var(--transition-slow);
+  pointer-events: none;
+}
+
+.terms-and-conditions section:hover::after {
+  opacity: 1;
+}
+
+.terms-and-conditions section:hover {
+  transform: translateY(-4px);
+  border-color: rgba(240, 142, 53, 0.25);
+  box-shadow: var(--shadow-lg);
+}
+
+/* ===== PARAGRAPH STYLING ===== */
+.terms-and-conditions p {
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  font-size: 1.05rem;
+  position: relative;
+  z-index: 1;
+}
+
+.terms-and-conditions p:first-of-type {
+  font-size: 1.15rem;
+  color: var(--text-primary);
+  font-weight: 500;
+  background: linear-gradient(135deg, var(--bg-accent) 0%, rgba(240, 142, 53, 0.05) 100%);
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  border-left: 4px solid var(--primary-orange);
+  margin-bottom: 3rem;
+  box-shadow: var(--shadow-xs);
+}
+
+/* Bold Text Enhancement */
+.terms-and-conditions b,
+.terms-and-conditions strong {
+  color: var(--primary-orange);
+  font-weight: 600;
+  position: relative;
+}
+
+/* ===== ADDRESS STYLING ===== */
+.terms-and-conditions address {
+  font-style: normal;
+  margin-top: 2rem;
+  padding: 2rem;
+  background: var(--bg-accent);
+  border: 1px solid rgba(240, 142, 53, 0.2);
+  border-radius: var(--border-radius);
+  position: relative;
+  backdrop-filter: blur(15px);
+  transition: all var(--transition-normal);
+}
+
+.terms-and-conditions address::before {
+  content: '📍';
+  position: absolute;
+  top: -10px;
+  left: 20px;
+  background: var(--bg-card);
+  padding: 0.5rem;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  border: 2px solid rgba(240, 142, 53, 0.2);
+}
+
+.terms-and-conditions address:hover {
+  border-color: rgba(240, 142, 53, 0.4);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.terms-and-conditions address strong {
+  color: var(--text-primary);
+  font-size: 1.1rem;
+  display: block;
+  margin-bottom: 0.75rem;
+  font-weight: 700;
+}
+
+/* ===== ENHANCED LIST STYLING ===== */
+.terms-and-conditions section p:contains('-') {
+  position: relative;
+  padding-left: 0;
+}
+
+/* Custom bullet points for lists within paragraphs */
+.terms-and-conditions p:has(br) {
+  position: relative;
+}
+
+/* ===== VISUAL ENHANCEMENTS ===== */
+/* Section Numbers */
+.terms-and-conditions section:before {
+  counter-increment: section;
+}
+
+.terms-and-conditions {
+  counter-reset: section;
+}
+
+/* Add visual hierarchy with icons */
+.terms-and-conditions section:nth-child(1) h2::after { content: ' 📋'; }
+.terms-and-conditions section:nth-child(2) h2::after { content: ' ✅'; }
+.terms-and-conditions section:nth-child(3) h2::after { content: ' 🔒'; }
+.terms-and-conditions section:nth-child(4) h2::after { content: ' 💡'; }
+.terms-and-conditions section:nth-child(5) h2::after { content: ' 👤'; }
+.terms-and-conditions section:nth-child(6) h2::after { content: ' 🔗'; }
+.terms-and-conditions section:nth-child(7) h2::after { content: ' ⚖️'; }
+.terms-and-conditions section:nth-child(8) h2::after { content: ' 🛡️'; }
+.terms-and-conditions section:nth-child(9) h2::after { content: ' ⏹️'; }
+.terms-and-conditions section:nth-child(10) h2::after { content: ' 🏛️'; }
+.terms-and-conditions section:nth-child(11) h2::after { content: ' 📞'; }
+.terms-and-conditions section:nth-child(12) h2::after { content: ' 📝'; }
+
+/* ===== SCROLL PROGRESS INDICATOR ===== */
+.terms-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: rgba(240, 142, 53, 0.1);
+  z-index: 1000;
+}
+
+.terms-progress-bar {
+  height: 100%;
+  background: var(--gradient-primary);
+  width: 0%;
+  transition: width 0.1s ease-out;
+}
+
+/* ===== TABLE OF CONTENTS ENHANCEMENT (if needed) ===== */
+.terms-toc {
+  background: var(--bg-card);
+  padding: 2rem;
+  border-radius: var(--border-radius-lg);
+  border: 1px solid rgba(240, 142, 53, 0.1);
+  margin-bottom: 3rem;
+  backdrop-filter: blur(20px);
+}
+
+.terms-toc h3 {
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.terms-toc ul {
+  list-style: none;
+  padding: 0;
+}
+
+.terms-toc li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(240, 142, 53, 0.05);
+}
+
+.terms-toc a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color var(--transition-normal);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.terms-toc a::before {
+  content: '→';
+  color: var(--primary-orange);
+  font-weight: bold;
+  opacity: 0;
+  transition: opacity var(--transition-normal);
+}
+
+.terms-toc a:hover {
+  color: var(--primary-orange);
+}
+
+.terms-toc a:hover::before {
+  opacity: 1;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 1024px) {
+  .terms-container {
+    max-width: 800px;
+    padding: 3rem 2rem;
+  }
+  
+  .terms-and-conditions section {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .terms-hero {
+    min-height: 30vh;
+    padding: 3rem 0 1rem;
+  }
+  
+  .terms-container {
+    padding: 2rem 1.5rem;
+  }
+  
+  .terms-and-conditions h1 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .terms-and-conditions h2 {
+    font-size: 1.4rem;
+    margin: 2rem 0 1rem;
+  }
+  
+  .terms-and-conditions section {
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .terms-and-conditions p {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+  
+  .terms-and-conditions address {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .terms-container {
+    padding: 1.5rem 1rem;
+  }
+  
+  .terms-and-conditions h1 {
+    font-size: 2rem;
+  }
+  
+  .terms-and-conditions h2 {
+    font-size: 1.2rem;
+  }
+  
+  .terms-and-conditions section {
+    padding: 1.25rem;
+  }
+  
+  .terms-and-conditions p {
+    font-size: 0.95rem;
+  }
+}
+
+/* ===== ANIMATION UTILITIES ===== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ===== ACCESSIBILITY ENHANCEMENTS ===== */
+.terms-and-conditions section:focus-within {
+  outline: 2px solid var(--primary-orange);
+  outline-offset: 4px;
+}
+
+.terms-and-conditions a:focus {
+  outline: 2px solid var(--primary-orange);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px rgba(240, 142, 53, 0.2);
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .terms-and-conditions section,
+  .terms-and-conditions h1,
+  .terms-and-conditions h2 {
+    animation: none;
+    transition: none;
+  }
+  
+  .terms-hero::after {
+    animation: none;
+  }
+}
+
+/* ===== PRINT STYLES ===== */
+@media print {
+  .terms-hero,
+  .terms-progress {
+    display: none;
+  }
+  
+  .terms-and-conditions {
+    background: white;
+    color: black;
+  }
+  
+  .terms-and-conditions section {
+    background: white;
+    border: 1px solid #ddd;
+    box-shadow: none;
+    page-break-inside: avoid;
+  }
+  
+  .terms-and-conditions h1,
+  .terms-and-conditions h2 {
+    color: black;
+  }
+}
+
+/* ===== SCROLL ANIMATIONS ===== */
+.animate-on-scroll-terms {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.animate-on-scroll-terms.visible {
+  opacity: 1;
+  transform: translateY(0);
+}

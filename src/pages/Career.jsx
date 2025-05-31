@@ -1,87 +1,72 @@
 import React from "react";
 import "../styles/App.css";
+import "../styles/career.css";
 import { Link } from "react-router-dom";
+import Button, { GlowButton } from "../components/Button";
 import job_icon from "../assets/job_opening_icon.jpg";
+import mission_img from '../assets/mission_img.png';
 
 const jobs = [
-  {
-    title: "App Dev Intern",
-    icon: job_icon,
-    postedDate: "05 Feb 2025",
-    duration: "3 month",
-    stipend: "Undisclosed",
-  },
-  {
-    title: "Web Dev Intern",
-    icon: job_icon,
-    postedDate: "05 Feb 2025",
-    duration: "3 month",
-    stipend: "Undisclosed",
-  },
-  {
-    title: "Graphic Design Intern",
-    icon: job_icon,
-    postedDate: "05 Feb 2025",
-    duration: "3 month",
-    stipend: "Undisclosed",
-  },
+  { title: "Frontend Developer", location: "Remote", type: "Internship" },
+  { title: "Backend Developer", location: "Remote", type: "Internship" },
+  { title: "Graphic Designer", location: "Remote", type: "Internship" },
+  { title: "Video Editor", location: "Remote", type: "Internship" },
+  { title: "Content Writer", location: "Remote", type: "Internship" },
+  { title: "Sales & Marketing", location: "Remote", type: "Internship" },
 ];
 
-// Reusable Button Component
-const Button = ({ children, className, ...props }) => {
+const JobCard = ({ title, location, type }) => {
   return (
-    <a
-      href="https://forms.gle/SQAzdLXTMzREMXX88"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      <button
-        className={`bg-[#ef8e35] px-8 py-2 text-lg mt-10 text-white rounded hover:bg-black transition ${className}`}
-        {...props}
+    <div className="job-card">
+      <h3>{title}</h3>
+      <p>We are looking for a skilled {title} to join our dynamic team.</p>
+      <div className="job-meta">
+        <span className="meta-item"><i className="fas fa-map-marker-alt"></i> {location}</span>
+        <span className="meta-item"><i className="fas fa-briefcase"></i> {type}</span>
+      </div>
+      <Button 
+        as={Link} 
+        to="/contact" 
+        variant="primary"
+        size="medium"
       >
-        {children}
-      </button>
-    </a>
-  );
-};
-
-// Job Card Component
-const JobCard = ({ title, icon, postedDate, duration, stipend }) => {
-  return (
-    <div className="jobcard">
-      <img src={icon} alt={title} className="h-16 w-16 mb-4 mx-auto" />
-      <h3 className="text-2xl font-semibold text-white text-center">{title}</h3>
-      <p className="text-gray-400 text-sm mt-2 text-center">Posted: {postedDate}</p>
-      <p className="text-gray-400 text-sm mt-1 text-center">Duration: {duration}</p>
-      <p className="text-gray-400 text-sm mt-1 text-center">Stipend: {stipend}</p>
-      <Button className={" block py-1 mx-auto"}>Apply Now</Button>
+        Apply Now
+      </Button>
     </div>
   );
 };
 
 export default function Career() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-900 via-black to-black text-white">
+    <>
       {/* Hero Section */}
-      <section className="container mx-auto px-4 py-24 text-center mb-14">
-        <h1 className="mx-auto max-w-5xl text-4xl font-bold tracking-tight sm:text-6xl">
-        
-          <span className="bg-gradient-to-r from-[#ef8e35] to-white bg-clip-text text-transparent">
-          Be a Part of Something Extraordinary.
-          </span>
-        </h1>
-        
-        <Button>Join Our Team</Button>
+      <section className="career-hero">
+        <div className="career-hero-content">
+          <h1>
+            Be a Part of Something Extraordinary.
+          </h1>
+          <Button 
+            as={Link} 
+            to="/contact"
+            size="large"
+            variant="glow"
+            glow={true}
+          >
+            Join Our Team
+          </Button>
+        </div>
       </section>
 
       {/* Job Listings */}
-      <section className="container mx-auto px-4 pb-24">
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {jobs.map((job) => (
-            <JobCard key={job.title} {...job} />
-          ))}
+      <section className="job-listings-section">
+        <div className="job-listings-container">
+          <div className="job-grid">
+            {jobs.map((job) => (
+              <JobCard key={job.title} {...job} />
+            ))}
+          </div>
         </div>
       </section>
-    </div>
+    </>
   );
 }
