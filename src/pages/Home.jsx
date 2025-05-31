@@ -72,7 +72,7 @@ function Home() {
           </h1>
           
           <p className="hero-description">
-            <span className="description-highlight">AppOrigo</span> revolutionizes digital experiences with 
+            <span className="description-highlight">AppOrigo Technologies</span> revolutionizes digital experiences with 
             cutting-edge technology solutions. We architect the future of digital innovation, 
             transforming complex challenges into seamless, scalable solutions.
           </p>
@@ -167,7 +167,7 @@ function Home() {
         <div className="future-vision-container">
           <div className="future-vision-content">
             <h2>Shaping the <span className="gradient-text">Digital Future</span></h2>
-            <p>In today's rapidly evolving digital landscape, staying ahead means embracing innovation. At AppOrigo, we're not just building solutions – we're crafting the future of digital experiences.</p>
+            <p>In today's rapidly evolving digital landscape, staying ahead means embracing innovation. At AppOrigo Technologies, we're not just building solutions – we're crafting the future of digital experiences.</p>
             <div className="vision-stats">
               <div className="vision-stat">
                 <span className="stat-number">24/7</span>
@@ -207,7 +207,7 @@ function Home() {
               <span className="gradient-text">Unlimited</span> Potential
             </h3>
             <p>
-              Join our team at <span className="highlight">AppOrigo</span> and unleash your talent with a 
+              Join our team at <span className="highlight">AppOrigo Technologies</span> and unleash your talent with a 
               mission-driven community. Grow with us and discover your unlimited potential today!
             </p>
             <Link to="/career" className="careers-cta">

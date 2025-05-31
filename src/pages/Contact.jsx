@@ -144,7 +144,7 @@ export default function ModernContact() {
 
                 <div className="flex items-center space-x-4 text-gray-300">
                   <Mail className="text-[#e29349]" />
-                  <p>info.apporigo@gmail.com</p>
+                  <p>info.AppOrigo Technologies@gmail.com</p>
                 </div>
 
                 <div className="pt-6 border-t border-gray-700">

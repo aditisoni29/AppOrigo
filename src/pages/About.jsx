@@ -9,7 +9,7 @@ import { faLinkedinIn, faInstagram } from '@fortawesome/free-brands-svg-icons';
 import "../styles/App.css";
 import "../styles/about.css";
 
-const AppOrigo = () => {
+const About = () => {
   const team = [
     {
       name: "Aditi Soni",
@@ -64,7 +64,7 @@ const AppOrigo = () => {
         <div className="about-hero-content">
           <h1>About Us</h1>
           <p>
-            At AppOrigo, we specialize in protecting businesses with cost-effective, high-performance security
+            At AppOrigo Technologies, we specialize in protecting businesses with cost-effective, high-performance security
             solutions designed for the unique challenges of today's digital landscape. Our mission is to help companies
             operate securely and confidently by protecting critical assets from evolving cyber threats.
           </p>
@@ -77,15 +77,15 @@ const AppOrigo = () => {
           <div className="about-content">
             <h2>OUR STORY</h2>
             <p>
-              AppOrigo began as the brainchild of five college students, driven by a shared ambition to make a meaningful impact in the tech world. In 2025, we embarked on a journey to create a company that would redefine how technology can empower individuals and businesses alike. <br /><br />
+              AppOrigo Technologies began as the brainchild of five college students, driven by a shared ambition to make a meaningful impact in the tech world. In 2025, we embarked on a journey to create a company that would redefine how technology can empower individuals and businesses alike. <br /><br />
 
               Our mission was clear from the start: to provide innovative, reliable, and affordable solutions that bridge the gap between the ever-evolving world of technology and its users. With a deep passion for coding and problem-solving, we set out to build a platform that could cater to the unique needs of startups and enterprises, making technology more accessible for all. <br /><br />
 
-              At AppOrigo, we believe that technology should be a tool for growth and innovation. Our team worked tirelessly to develop cutting-edge solutions with a focus on simplicity, scalability, and customer-centricity. From our early days of brainstorming ideas to building the first version of our platform, every step has been a reflection of our commitment to excellence. <br /><br />
+              At AppOrigo Technologies, we believe that technology should be a tool for growth and innovation. Our team worked tirelessly to develop cutting-edge solutions with a focus on simplicity, scalability, and customer-centricity. From our early days of brainstorming ideas to building the first version of our platform, every step has been a reflection of our commitment to excellence. <br /><br />
 
               We are more than just a tech company; we are a community of creators and collaborators, fostering an environment where knowledge-sharing and innovation thrive. Through workshops, open forums, and resources, we actively engage with our users, enabling them to grow and succeed alongside us. <br /><br />
 
-              As we continue to evolve and expand, our vision remains unchanged: to help businesses and developers turn their ideas into reality with powerful, intuitive solutions. With the support of our growing community and a relentless drive to push the boundaries of what's possible, AppOrigo is on its way to becoming a transformative force in the tech industry.
+              As we continue to evolve and expand, our vision remains unchanged: to help businesses and developers turn their ideas into reality with powerful, intuitive solutions. With the support of our growing community and a relentless drive to push the boundaries of what's possible, AppOrigo Technologies is on its way to becoming a transformative force in the tech industry.
             </p>
           </div>
         </div>
@@ -258,4 +258,4 @@ const AppOrigo = () => {
   );
 };
 
-export default AppOrigo;
+export default About;

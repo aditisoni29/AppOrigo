@@ -3,8 +3,6 @@ import "../styles/App.css";
 import "../styles/career.css";
 import { Link } from "react-router-dom";
 import Button, { GlowButton } from "../components/Button";
-import job_icon from "../assets/job_opening_icon.jpg";
-import mission_img from '../assets/mission_img.png';
 
 const jobs = [
   { title: "Frontend Developer", location: "Remote", type: "Internship" },

@@ -28,7 +28,7 @@ export default function Footer() {
   const socialLinks = [
     { 
       name: "LinkedIn", 
-      url: "https://www.linkedin.com/company/apporigo", 
+      url: "https://www.linkedin.com/company/AppOrigo Technologies", 
       icon: Linkedin,
       color: "linkedin"
     },
@@ -40,7 +40,7 @@ export default function Footer() {
     },
     { 
       name: "Mail",
-      url: "mailto:info.apporigo@gmail.com",
+      url: "mailto:info.AppOrigo Technologies@gmail.com",
       icon: Mail,
       color: "mail"
     }
@@ -49,8 +49,8 @@ export default function Footer() {
   const contactInfo = [
     {
       icon: Mail,
-      text: "info.apporigo@gmail.com",
-      href: "mailto:info.apporigo@gmail.com"
+      text: "info.AppOrigo Technologies@gmail.com",
+      href: "mailto:info.AppOrigo Technologies@gmail.com"
     },
   ];
 
@@ -66,7 +66,7 @@ export default function Footer() {
           <div className="footer-section footer-brand">
             <div className="brand-section">
               <div className="footer-logo">
-                <img src={companyLogo} alt="AppOrigo Logo" className="logo-image" />
+                <img src={companyLogo} alt="AppOrigo Technologies Logo" className="logo-image" />
                 <div className="logo-glow-effect"></div>
               </div>
               
@@ -136,7 +136,7 @@ export default function Footer() {
         <div className="footer-bottom">
           <div className="bottom-content">
             <div className="copyright">
-              <span>2025 @AppOrigo Technologies</span>
+              <span>2025 @AppOrigo Technologies Technologies</span>
             </div>
           </div>
         </div>

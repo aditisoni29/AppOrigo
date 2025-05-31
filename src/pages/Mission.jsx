@@ -2,7 +2,6 @@
 import React from 'react';
 import '../styles/App.css';
 import '../styles/mission.css'; // Import the new mission.css file
-import mission_img from '../assets/mission_img.png';
 import { Link } from 'react-router-dom';
 import Button, { SecondaryButton } from '../components/Button'; // Import Button components
 

@@ -53,8 +53,8 @@ const Navbar = () => {
             <div className="logo-glow"></div>
           </div>
           <Link to="/" className="brand-text">
-            <span className="brand-app">App</span>
-            <span className="brand-origo">Origo</span>
+            <span className="brand-app">AppOrigo</span>
+            <span className="brand-origo">Technologies</span>
           </Link>
         </div>
 
