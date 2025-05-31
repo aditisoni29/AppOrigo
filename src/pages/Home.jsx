@@ -88,13 +88,13 @@ function Home() {
           <div className="hero-metrics">
             <div className="metric-item">
               <div className="metric-icon">🎯</div>
-              <div className="metric-number">70+</div>
+              <div className="metric-number">30+</div>
               <div className="metric-label">Projects Delivered</div>
             </div>
             <div className="metric-divider"></div>
             <div className="metric-item">
               <div className="metric-icon">👥</div>
-              <div className="metric-number">50+</div>
+              <div className="metric-number">20+</div>
               <div className="metric-label">Clients</div>
             </div>
             <div className="metric-divider"></div>
