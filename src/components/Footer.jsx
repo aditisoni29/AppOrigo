@@ -40,7 +40,7 @@ export default function Footer() {
     },
     { 
       name: "Mail",
-      url: "mailto:info.AppOrigo Technologies@gmail.com",
+      url: "mailto:info.apporigo@gmail.com",
       icon: Mail,
       color: "mail"
     }
@@ -49,8 +49,8 @@ export default function Footer() {
   const contactInfo = [
     {
       icon: Mail,
-      text: "info.AppOrigo Technologies@gmail.com",
-      href: "mailto:info.AppOrigo Technologies@gmail.com"
+      text: "info.apporigo@gmail.com",
+      href: "mailto:info.apporigo@gmail.com"
     },
   ];
 
@@ -136,7 +136,7 @@ export default function Footer() {
         <div className="footer-bottom">
           <div className="bottom-content">
             <div className="copyright">
-              <span>2025 @AppOrigo Technologies Technologies</span>
+              <span>2025 @AppOrigo Technologies</span>
             </div>
           </div>
         </div>

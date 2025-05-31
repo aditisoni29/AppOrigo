@@ -138,13 +138,8 @@ export default function ModernContact() {
                 </div>
 
                 <div className="flex items-center space-x-4 text-gray-300">
-                  <Phone className="text-[#e29349]" />
-                  <p>Call us: +91 9711254544</p>
-                </div>
-
-                <div className="flex items-center space-x-4 text-gray-300">
                   <Mail className="text-[#e29349]" />
-                  <p>info.AppOrigo Technologies@gmail.com</p>
+                  <p>info.apporigo@gmail.com</p>
                 </div>
 
                 <div className="pt-6 border-t border-gray-700">

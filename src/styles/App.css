@@ -432,7 +432,7 @@ p {
 .mobile-menu-open {
   opacity: 1;
   visibility: visible;
-}
+  }
 
 .mobile-menu-content {
   width: 80%;
