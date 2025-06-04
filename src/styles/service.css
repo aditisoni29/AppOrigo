@@ -262,9 +262,9 @@
   max-height: 400px;
   display: flex;
   align-items: center;
-  justify-content: center;
-  order: 2; /* Default: image on right for first card */
+  justify-content: flex-end; /* Align image to the right */
 }
+
 
 .service-image::before {
   content: '';
@@ -317,7 +317,7 @@
 
 /* ALTERNATING LAYOUT - FIXED FOR RIGHT-LEFT-RIGHT PATTERN */
 
-/* First card (Web Development): Content left, Image right - DEFAULT */
+/* First card (Web Development): Content left, Image right */
 .service-card:nth-child(1) .service-content {
   order: 1;
   text-align: left;
@@ -325,23 +325,10 @@
 
 .service-card:nth-child(1) .service-image {
   order: 2;
-}
-
-.service-card:nth-child(1) .service-content h2::after {
-  left: 0;
-  transform-origin: left;
-}
-
-.service-card:nth-child(1) .service-cta-btn {
-  margin-left: 0;
-  margin-right: auto;
+  justify-content: flex-end; /* Image aligned right for first card */
 }
 
 /* Second card (App Development): Image left, Content right */
-.service-card:nth-child(2) {
-  background: linear-gradient(135deg, var(--bg-card) 0%, rgba(14, 165, 233, 0.02) 100%);
-}
-
 .service-card:nth-child(2) .service-content {
   order: 2;
   text-align: right;
@@ -349,28 +336,10 @@
 
 .service-card:nth-child(2) .service-image {
   order: 1;
-}
-
-.service-card:nth-child(2) .service-content h2::after {
-  right: 0;
-  left: auto;
-  transform-origin: right;
-}
-
-.service-card:nth-child(2) .service-features li {
-  flex-direction: row-reverse;
-}
-
-.service-card:nth-child(2) .service-cta-btn {
-  margin-left: auto;
-  margin-right: 0;
+  justify-content: flex-start; /* Image aligned left for second card */
 }
 
 /* Third card (Graphics Design): Content left, Image right */
-.service-card:nth-child(3) {
-  background: linear-gradient(135deg, var(--bg-card) 0%, rgba(240, 142, 53, 0.02) 100%);
-}
-
 .service-card:nth-child(3) .service-content {
   order: 1;
   text-align: left;
@@ -378,52 +347,10 @@
 
 .service-card:nth-child(3) .service-image {
   order: 2;
+  justify-content: flex-end; /* Image aligned right for third card */
 }
 
-.service-card:nth-child(3) .service-content h2::after {
-  left: 0;
-  transform-origin: left;
-}
 
-.service-card:nth-child(3) .service-cta-btn {
-  margin-left: 0;
-  margin-right: auto;
-}
-
-/* Tech Stack Badges */
-.tech-stack-service {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-  margin-top: 1.5rem;
-}
-
-.tech-badge-service {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  padding: 0.4rem 0.8rem;
-  background: var(--bg-accent);
-  border: 1px solid rgba(255, 107, 53, 0.2);
-  border-radius: 20px;
-  font-size: 0.8rem;
-  font-weight: 500;
-  color: var(--text-secondary);
-  transition: all var(--transition-normal);
-  backdrop-filter: blur(10px);
-}
-
-.tech-badge-service::before {
-  content: '⚡';
-  font-size: 0.9rem;
-}
-
-.tech-badge-service:hover {
-  border-color: var(--primary-orange);
-  color: var(--primary-orange);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-xs);
-}
 
 /* ===== SERVICE PROCESS SECTION ===== */
 .process-section {
@@ -564,7 +491,7 @@
   align-items: center;
 }
 
-/* ===== RESPONSIVE DESIGN - IMPROVED MOBILE ALIGNMENT ===== */
+===== RESPONSIVE DESIGN - IMPROVED MOBILE ALIGNMENT =====
 @media (max-width: 1200px) {
   .service-card {
     gap: 2.5rem;
@@ -700,9 +627,22 @@
   animation: serviceSlideInRight 0.8s ease-out 0.3s both;
 }
 
-.service-image {
-  animation: scaleIn 0.8s ease-out 0.2s both;
+/* New Image Animation - Subtle Fade-In and Scale Effect */
+@keyframes imageFadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
+
+.service-image {
+  animation: imageFadeIn 0.8s ease-out 0.2s both;
+}
+
 
 /* ===== SCROLL ANIMATIONS ===== */
 .animate-on-scroll-service {
