@@ -1,7 +1,8 @@
 import React from "react";
 import web from "../assets/Services/web.png";
 import app from "../assets/Services/app.png";
-import gd from "../assets/Services/gd.png";
+import gd from "../assets/Services/GD.png";
+import uiux from "../assets/Services/uiux.png";
 import { Link } from "react-router-dom";
 import Button, { GlowButton, SecondaryButton } from "../components/Button";
 import "../styles/service.css";
@@ -79,14 +80,13 @@ function Services() {
               </div>
             </div>
 
-            {/* Graphics Design Service */}
+            {/* UI/UX Design Service */}
             <div className="service-card">
               <div className="service-content">
-                <h2>Graphics Design</h2>
+                <h2>UI/UX Design</h2>
                 <p>We craft intuitive, user-friendly designs that enhance engagement. Through wireframing, prototyping, and testing, we create responsive, mobile-first interfaces that look great and function perfectly across all devices.</p>
                 <ul className="service-features">
                   <li>UI/UX Design</li>
-                  <li>Brand Identity Design</li>
                   <li>Print & Digital Design</li>
                   <li>Motion Graphics</li>
                 </ul>
@@ -100,7 +100,32 @@ function Services() {
                 </Button>
               </div>
               <div className="service-image">
-                <img src={gd} alt="Graphics Design" />
+                <img src={uiux} alt="UI/UX Design" />
+              </div>
+            </div>
+
+            {/* Graphic Design Service */}
+            <div className="service-card">
+              <div className="service-image">
+                <img src={gd} alt="Graphic Design" />
+              </div>
+              <div className="service-content">
+                <h2>Graphic Design</h2>
+                <p>Transform your brand identity with our creative graphic design solutions. From logos to marketing materials, we craft compelling visual stories that resonate with your audience and elevate your brand presence.</p>
+                <ul className="service-features">
+                  <li>Logo Design</li>
+                  <li>Brand Identity</li>
+                  <li>Marketing Materials</li>
+                  <li>Social Media Graphics</li>
+                </ul>
+                <Button 
+                  as={Link} 
+                  to="/contact" 
+                  variant="primary"
+                  className="service-cta-btn"
+                >
+                  Get Started
+                </Button>
               </div>
             </div>
           </div>
