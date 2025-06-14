@@ -11,6 +11,7 @@ import MissionPage from './pages/Mission';
 import Terms from "./pages/terms";
 import Privacy from "./pages/PrivacyPage";
 import ScrollToTop from "./components/scrolltotop";
+import BlogDetail from "./pages/BlogDetail";
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/services" element={<Services />} />
+           <Route path="/blog/:blogId" element={<BlogDetail />} />
           <Route path="/career" element={<Career />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/mission" element={<MissionPage />} />

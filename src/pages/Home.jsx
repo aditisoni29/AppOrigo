@@ -5,6 +5,9 @@ import Button from "../components/Button";
 import Careerimg from "../assets/careers_img.png";
 import fact_img from "../assets/fact-img.png";
 import { Link } from "react-router-dom";
+import { blogData } from "../styles/BlogData";
+import { motion } from "framer-motion";
+
 
 function Home() {
   return (
@@ -236,89 +239,64 @@ function Home() {
         </div>
       </section>
 
-      {/* Blog Section */}
-      <section className="blog-section">
-        <div className="blog-container">
-          <div className="section-header">
-            <h2>Latest <span className="gradient-text">Insights</span></h2>
-            <p className="section-subtitle">Stay updated with our latest articles, insights, and industry trends</p>
-          </div>
-          <div className="blog-grid">
-            {/* Blog cards */}
-            <div className="blog-card">
-              <div className="blog-image">
-                <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2064&q=80" alt="Web Development" />
-                <div className="blog-category">Web Development</div>
-              </div>
-              <div className="blog-content">
-                <h3>Modern Web Development: Building Scalable Solutions for Tomorrow</h3>
-                <p>Discover how we leverage cutting-edge technologies and frameworks to create robust, scalable web applications that drive business growth and deliver exceptional user experiences.</p>
-                <div className="blog-meta">
-                  <span className="blog-date">March 15, 2024</span>
-                  <span className="blog-read-time">5 min read</span>
-                </div>
-                <a href="#" className="read-more">
-                  Read Article <span className="cta-arrow">→</span>
-                </a>
-              </div>
-            </div>
-
-            <div className="blog-card">
-              <div className="blog-image">
-                <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2064&q=80" alt="UI/UX Design" />
-                <div className="blog-category">UI/UX Design</div>
-              </div>
-              <div className="blog-content">
-                <h3>The Art of User Experience: Creating Intuitive Digital Interfaces</h3>
-                <p>Explore our comprehensive approach to UI/UX design, where we combine aesthetic excellence with functional precision to create engaging and intuitive digital experiences.</p>
-                <div className="blog-meta">
-                  <span className="blog-date">March 12, 2024</span>
-                  <span className="blog-read-time">4 min read</span>
-                </div>
-                <a href="#" className="read-more">
-                  Read Article <span className="cta-arrow">→</span>
-                </a>
-              </div>
-            </div>
-
-            <div className="blog-card">
-              <div className="blog-image">
-                <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2074&q=80" alt="App Development" />
-                <div className="blog-category">App Development</div>
-              </div>
-              <div className="blog-content">
-                <h3>Mobile App Development: Crafting Solutions for the Digital Age</h3>
-                <p>Learn about our innovative approach to mobile app development, where we combine cutting-edge technology with user-centric design to create powerful, scalable applications.</p>
-                <div className="blog-meta">
-                  <span className="blog-date">March 10, 2024</span>
-                  <span className="blog-read-time">6 min read</span>
-                </div>
-                <a href="#" className="read-more">
-                  Read Article <span className="cta-arrow">→</span>
-                </a>
-              </div>
-            </div>
-
-            <div className="blog-card">
-              <div className="blog-image">
-                <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80" alt="Graphic Design" />
-                <div className="blog-category">Graphic Design</div>
-              </div>
-              <div className="blog-content">
-                <h3>Visual Storytelling: The Power of Strategic Graphic Design</h3>
-                <p>Discover how our graphic design expertise helps businesses communicate their message effectively through compelling visual narratives and brand identity solutions.</p>
-                <div className="blog-meta">
-                  <span className="blog-date">March 8, 2024</span>
-                  <span className="blog-read-time">4 min read</span>
-                </div>
-                <a href="#" className="read-more">
-                  Read Article <span className="cta-arrow">→</span>
-                </a>
-              </div>
-            </div>
-          </div>
+      
+  {/* {Blog Section} */}
+      <section className="blog-section py-20 bg-gradient-to-b from-[#0F111A] via-[#111623] to-[#090D18]">
+      <div className="blog-container max-w-7xl mx-auto px-4">
+        <div className="section-header text-center mb-14">
+          <h2 className="text-4xl font-extrabold text-white mb-4">
+            Latest <span className="bg-gradient-to-r from-orange-400 to-yellow-500 text-transparent bg-clip-text">Insights</span>
+          </h2>
+          <p className="section-subtitle text-gray-400">
+            Stay updated with our latest articles, insights, and industry trends
+          </p>
         </div>
-      </section>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+          {blogData.map((blog) => (
+            <motion.div
+              className="blog-card rounded-2xl overflow-hidden bg-white/10 backdrop-blur-lg border border-white/10 shadow-2xl hover:scale-105 transition-all duration-400 cursor-pointer"
+              key={blog.id}
+              whileHover={{ y: -8 }}
+            >
+              <div className="blog-image relative">
+                <img
+                  src={blog.images[0]}
+                  alt={blog.category}
+                  className="w-full h-[220px] object-cover object-center"
+                />
+                <div className="absolute top-4 left-4 bg-gradient-to-r from-orange-400 to-yellow-400 text-black font-semibold px-3 py-1 rounded-full text-xs shadow-lg">
+                  {blog.category}
+                </div>
+              </div>
+
+              <div className="p-6 text-white">
+                <h3 className="text-xl font-bold mb-3">{blog.title}</h3>
+                <p className="text-gray-300 mb-6">
+                  {blog.content[0]?.substring(0, 100)}...
+                </p>
+
+                <div className="flex justify-between items-center text-sm text-gray-400 mb-5">
+                  <span>{blog.date}</span>
+                  <span>
+                    {Math.ceil(blog.content.join(" ").split(" ").length / 200)} min read
+                  </span>
+                </div>
+
+                <Link
+                  to={`/blog/${blog.id}`}
+                  className="inline-flex items-center gap-2 text-orange-400 font-semibold hover:underline"
+                >
+                  Read Article <span className="cta-arrow">→</span>
+                </Link>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+
 
       {/* Careers Section */}
       <section className="careers-section">
