@@ -1697,13 +1697,24 @@ p {
   
   .brand-section {
     flex-direction: column;
-    text-align: center;
+    text-align: left;
+    align-items: flex-start;
     gap: 1rem;
+    margin-left: 0.2rem;
   }
   
   .brand-name {
     font-size: 1.75rem;
-    justify-content: center;
+    justify-content: flex-start;
+    text-align: left;
+  }
+  
+  .brand-info {
+    text-align: left;
+  }
+  
+  .brand-tagline {
+    text-align: left;
   }
   
   .tech-stats {
