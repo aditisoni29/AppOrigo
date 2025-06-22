@@ -8,6 +8,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedinIn, faInstagram } from '@fortawesome/free-brands-svg-icons';
 import "../styles/App.css";
 import "../styles/about.css";
+import { Helmet } from "react-helmet";
 
 const About = () => {
   const team = [
@@ -59,14 +60,17 @@ const About = () => {
 
   return (
     <div className="about-page">
+      <Helmet>
+        <title>About AppOrigo Technologies | Our Story & Team</title>
+        <meta name="description" content="Learn about AppOrigo Technologies, our mission, vision, and the passionate team behind our innovative solutions." />
+        <meta name="robots" content="index, follow" />
+      </Helmet>
       {/* Enhanced About Hero Section */}
       <section className="about-hero">
         <div className="about-hero-content">
-          <h1>About Us</h1>
+          <h1>About AppOrigo Technologies</h1>
           <p>
-            At AppOrigo Technologies, we specialize in protecting businesses with cost-effective, high-performance security
-            solutions designed for the unique challenges of today's digital landscape. Our mission is to help companies
-            operate securely and confidently by protecting critical assets from evolving cyber threats.
+            About AppOrigo Technologies: We specialize in protecting businesses with cost-effective, high-performance security solutions designed for the unique challenges of today's digital landscape. Our mission is to help companies operate securely and confidently by protecting critical assets from evolving cyber threats.
           </p>
         </div>
       </section>
@@ -254,6 +258,7 @@ const About = () => {
           </div>
         </div>
       </section>
+      <img src={AditiSoni} alt="about apporigo technologies founder" style={{display:'none'}} />
     </div>
   );
 };

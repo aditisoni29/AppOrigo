@@ -12,7 +12,7 @@ import {
   Zap,
   Globe
 } from "lucide-react";
-import companyLogo from "../assets/Screenshot_2024-11-26_at_9.57.43_AM.png";
+import companyLogo from "../assets/Screenshot_2024-11-26_at_9.57.43_AM.webp";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();

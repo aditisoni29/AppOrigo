@@ -7,15 +7,21 @@ import { Link } from "react-router-dom";
 import Button, { GlowButton, SecondaryButton } from "../components/Button";
 import "../styles/service.css";
 import "../styles/App.css";
+import { Helmet } from "react-helmet";
 
 function Services() {
   return (
     <>
+      <Helmet>
+        <title>Custom Web & App Development India | AppOrigo Services</title>
+        <meta name="description" content="AppOrigo Technologies provides custom web & app development in India, offering tailored digital solutions for startups and enterprises." />
+        <meta name="robots" content="index, follow" />
+      </Helmet>
       {/* Hero Section */}
       <section className="services-hero">
         <div className="services-hero-content">
-          <h1>Our Premium Services</h1>
-          <p>Explore the wide range of services we offer to help you achieve your digital goals.</p>
+          <h1>Custom Web & App Development India</h1>
+          <p>Explore the wide range of services we offer to help you achieve your digital goals. Our <b>custom web & app development India</b> services empower startups and businesses to scale with innovative, robust, and user-centric solutions.</p>
           <Button 
             as={Link} 
             to="/contact" 
@@ -51,14 +57,14 @@ function Services() {
                 </Button>
               </div>
               <div className="service-image">
-                <img src={web} alt="Web Development" />
+                <img src={web} alt="custom web development India" />
               </div>
             </div>
 
             {/* App Development Service */}
             <div className="service-card">
               <div className="service-image">
-                <img src={app} alt="App Development" />
+                <img src={app} alt="custom app development India" />
               </div>
               <div className="service-content">
                 <h2>App Development</h2>
