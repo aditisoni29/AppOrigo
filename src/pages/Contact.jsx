@@ -2,9 +2,10 @@ import React, { useState } from 'react';
 import { Send, Phone, Mail, MapPin, Loader2, Plus } from 'lucide-react';
 import "../styles/App.css";
 import "../styles/contact.css";
+import { Helmet } from "react-helmet";
 
 
-export default function ModernContact() {
+export default function Contact() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -48,17 +49,22 @@ export default function ModernContact() {
 
   return (
     <div className="contact-page">
+      <Helmet>
+        <title>Contact AppOrigoTechnologies | Get in Touch</title>
+        <meta name="description" content="Contact AppOrigoTechnologies for custom web, app, and design solutions. Reach out for a quote or to discuss your project needs." />
+        <meta name="robots" content="index, follow" />
+      </Helmet>
       {/* World Map Background */}
-      <div className="contact-background-overlay"></div>
+      <div className="contact-background-overlay" /* alt="contact apporigotechnologies background" */></div>
       
       <div className="contact-container">
         <div className="contact-content-wrapper">
           {/* Header Section */}
           <div className="contact-header">
             <h1 className="contact-title">
-              Contact us
+              Contact AppOrigoTechnologies
             </h1>
-            <p className="contact-subtitle">Ask for a quotation from us!</p>
+            <p className="contact-subtitle">Ask for a quotation from us! For any queries, <b>contact apporigotechnologies</b> today.</p>
           </div>
 
           <div className="contact-grid">

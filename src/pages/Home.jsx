@@ -2,16 +2,22 @@ import React from "react";
 import "../styles/App.css";
 import "../styles/Home.css";
 import Button from "../components/Button";
-import Careerimg from "../assets/careers_img.png";
-import fact_img from "../assets/fact-img.png";
+import Careerimg from "../assets/careers_img.webp";
+import fact_img from "../assets/fact-img.webp";
 import { Link } from "react-router-dom";
 import { blogData } from "../styles/BlogData";
 import { motion } from "framer-motion";
+import { Helmet } from "react-helmet";
 
 
 function Home() {
   return (
     <div>
+      <Helmet>
+        <title>Software Solutions for Startups | AppOrigo Technologies</title>
+        <meta name="description" content="AppOrigo Technologies offers software solutions for startups, delivering custom web, app, and design services to empower your business growth." />
+        <meta name="robots" content="index, follow" />
+      </Helmet>
       {/* Revolutionary Tech Hero Section */}
       <div className="hero-section">
         <div className="hero-background">
@@ -68,15 +74,14 @@ function Home() {
           </div>
           
           <h1 className="hero-title">
-            <span className="title-line-1">Empowering</span>
-            <span className="title-line-2 gradient-text">Digital</span>
+            <span className="title-line-1">Software Solutions for Startups</span>
+            <span className="title-line-2 gradient-text">Empowering Digital</span>
             <span className="title-line-3">Transformation Through</span>
             <span className="title-line-5 gradient-text">Innovation</span>
           </h1>
           
           <p className="hero-description">
-            <span className="description-highlight">AppOrigo Technologies</span> revolutionizes digital experiences with 
-            cutting-edge technology solutions. We architect the future of digital innovation, 
+            <span className="description-highlight">AppOrigo Technologies</span> provides <b>software solutions for startups</b> and revolutionizes digital experiences with cutting-edge technology solutions. We architect the future of digital innovation, 
             transforming complex challenges into seamless, scalable solutions.
           </p>
           
@@ -314,6 +319,8 @@ function Home() {
           </div>
         </div>
       </section>
+      <img src={Careerimg} alt="software solutions for startups team" style={{display:'none'}} />
+      <img src={fact_img} alt="startup software solutions facts" style={{display:'none'}} />
     </div>
   );
 }

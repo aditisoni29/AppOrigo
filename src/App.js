@@ -1,18 +1,18 @@
-import React from "react";
+import React, { Suspense, lazy } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import Home from "./pages/Home";
-import Services from "./pages/Services";
-import Career from "./pages/Career";
-import Contact from "./pages/Contact";
-import About from "./pages/About";
-import MissionPage from './pages/Mission';
-import Terms from "./pages/terms";
-import Privacy from "./pages/PrivacyPage";
 import ScrollToTop from "./components/scrolltotop";
-import BlogDetail from "./pages/BlogDetail";
 
+const Home = lazy(() => import("./pages/Home"));
+const Services = lazy(() => import("./pages/Services"));
+const Career = lazy(() => import("./pages/Career"));
+const Contact = lazy(() => import("./pages/Contact"));
+const About = lazy(() => import("./pages/About"));
+const MissionPage = lazy(() => import("./pages/Mission"));
+const Terms = lazy(() => import("./pages/terms"));
+const Privacy = lazy(() => import("./pages/PrivacyPage"));
+const BlogDetail = lazy(() => import("./pages/BlogDetail"));
 
 function App() {
   return (
@@ -20,17 +20,19 @@ function App() {
       <ScrollToTop/>
       <div>
         <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/services" element={<Services />} />
-           <Route path="/blog/:blogId" element={<BlogDetail />} />
-          <Route path="/career" element={<Career />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/mission" element={<MissionPage />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/terms" element={<Terms/>} />
-          <Route path="/privacy" element={<Privacy/>} />
-        </Routes>
+        <Suspense fallback={<div style={{color: 'white', textAlign: 'center', marginTop: '2rem'}}>Loading...</div>}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/blog/:blogId" element={<BlogDetail />} />
+            <Route path="/career" element={<Career />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/mission" element={<MissionPage />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/terms" element={<Terms/>} />
+            <Route path="/privacy" element={<Privacy/>} />
+          </Routes>
+        </Suspense>
         <Footer />
       </div>
     </Router>

@@ -34,9 +34,26 @@ function BlogDetail() {
       <Helmet>
         <title>{blog.title} | AppOrigo Blog</title>
         <meta name="description" content={blog.content[0].substring(0, 150)} />
+        <link rel="canonical" href={`https://www.apporigotechnologies.co.in/blog/${blog.id}`} />
         <meta property="og:title" content={blog.title} />
         <meta property="og:description" content={blog.content[0].substring(0, 150)} />
         <meta property="og:image" content={blog.images[0]} />
+        <meta property="og:url" content={`https://www.apporigotechnologies.co.in/blog/${blog.id}`} />
+        <meta property="og:type" content="article" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={blog.title} />
+        <meta name="twitter:description" content={blog.content[0].substring(0, 150)} />
+        <meta name="twitter:image" content={blog.images[0]} />
+        <script type="application/ld+json">{JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'Article',
+          headline: blog.title,
+          description: blog.content[0].substring(0, 150),
+          image: blog.images[0],
+          author: 'AppOrigo Technologies',
+          datePublished: blog.date,
+          mainEntityOfPage: `https://www.apporigotechnologies.co.in/blog/${blog.id}`
+        })}</script>
       </Helmet>
 
       <div className="fixed top-0 left-0 w-full h-1 bg-orange-500 z-50">
@@ -78,7 +95,7 @@ function BlogDetail() {
 
           <motion.img 
             src={blog.images[0]} 
-            alt={blog.title} 
+            alt={blog.title + ' - AppOrigo Blog'} 
             className="w-full h-[400px] object-cover object-center rounded-xl transition-transform duration-300 ease-out"
             whileHover={{ scale: 1.035 }}
             transition={{ type: "spring", stiffness: 120 }}
@@ -90,7 +107,8 @@ function BlogDetail() {
         </div>
 
         <div ref={contentRef} className="text-gray-300 leading-relaxed space-y-6">
-          {blog.content.map((paragraph, index) => (
+          <p><b>{blog.title}</b>: {blog.content[0]}</p>
+          {blog.content.slice(1).map((paragraph, index) => (
             <p key={index}>{paragraph}</p>
           ))}
         </div>
