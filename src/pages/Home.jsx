@@ -74,7 +74,7 @@ function Home() {
           </div>
           
           <h1 className="hero-title">
-            <span className="title-line-1">Software Solutions for Startups</span>
+            <span className="title-line-1">Software Solutions</span>
             <span className="title-line-2 gradient-text">Empowering Digital</span>
             <span className="title-line-3">Transformation Through</span>
             <span className="title-line-5 gradient-text">Innovation</span>

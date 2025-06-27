@@ -1498,7 +1498,7 @@
   
   .blog-category {
     font-size: 0.7rem;
-    padding: 0.3rem 0.7rem;
+    padding: 0.4rem 0.8rem;
   }
   
   .blog-meta {
@@ -2353,4 +2353,18 @@
     grid-template-columns: 1fr;
     gap: 1rem;
   }
+}
+
+/* === DEBUG: Force hero content and title visible === */
+.hero-title,
+.hero-content,
+.title-line-1,
+.title-line-2,
+.title-line-3,
+.title-line-4,
+.title-line-5 {
+  opacity: 1 !important;
+  transform: none !important;
+  animation: none !important;
+  color: #fff !important;
 }

@@ -1,8 +1,6 @@
 import React from 'react';
 import AditiSoni from "../assets/Team/aditi.jpeg";
 import ChitranshSaxena from "../assets/Team/chitransh.svg";
-import RohanJogale from "../assets/Team/rohan.jpeg";
-import NandiniAgrawal from "../assets/Team/nandini.jpeg";
 import VaishnaviParolia from "../assets/Team/vaishnavi.jpeg";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedinIn, faInstagram } from '@fortawesome/free-brands-svg-icons';
@@ -28,24 +26,6 @@ const About = () => {
       imageUrl: ChitranshSaxena,
       linkedin: "https://www.linkedin.com/in/chitranshatlkdin/",
       instagram: "https://www.instagram.com/_.chitransh_saxena._/",
-    },
-    {
-      name: "Rohan Jogale",
-      role: "Managing Director",
-      description:
-        "Driving strategic execution with a focus on innovation and a future-ready technology vision.",
-      imageUrl: RohanJogale,
-      linkedin: "https://www.linkedin.com/in/rohan-jogale-534a90266/",
-      instagram: "https://www.instagram.com/rohanj.05/",
-    },
-    {
-      name: "Nandini Agrawal",
-      role: "Chief Financial Officer",
-      description:
-        "Steering fiscal strategy with precision, ensuring stability, scalability, and stakeholder trust.",
-      imageUrl: NandiniAgrawal,
-      linkedin: "https://www.linkedin.com/in/nandini-agrawal-9a9825251/",
-      instagram: "https://www.instagram.com/justnandinii/",
     },
     {
       name: "Vaishnavi Parolia",
@@ -81,7 +61,7 @@ const About = () => {
           <div className="about-content">
             <h2>OUR STORY</h2>
             <p>
-              AppOrigo Technologies began as the brainchild of five college students, driven by a shared ambition to make a meaningful impact in the tech world. In 2025, we embarked on a journey to create a company that would redefine how technology can empower individuals and businesses alike. <br /><br />
+              AppOrigo Technologies began as the brainchild of three college students, driven by a shared ambition to make a meaningful impact in the tech world. In 2025, we embarked on a journey to create a company that would redefine how technology can empower individuals and businesses alike. <br /><br />
 
               Our mission was clear from the start: to provide innovative, reliable, and affordable solutions that bridge the gap between the ever-evolving world of technology and its users. With a deep passion for coding and problem-solving, we set out to build a platform that could cater to the unique needs of startups and enterprises, making technology more accessible for all. <br /><br />
 
@@ -178,8 +158,8 @@ const About = () => {
               </div>
             </div>
 
-            {/* Second Row - Rohan, Nandini, and Vaishnavi */}
-            <div className="team-row-2">
+            {/* Second Row - Vaishnavi only, centered */}
+            <div className="team-row-2" style={{ justifyContent: 'center', display: 'flex' }}>
               <div className="team-member-card">
                 <img src={team[2].imageUrl} alt={team[2].name} />
                 <h3>{team[2].name}</h3>
@@ -199,56 +179,6 @@ const About = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={`${team[2].name}'s Instagram`}
-                  >
-                    <FontAwesomeIcon icon={faInstagram} size="lg" />
-                  </a>
-                </div>
-              </div>
-              
-              <div className="team-member-card">
-                <img src={team[3].imageUrl} alt={team[3].name} />
-                <h3>{team[3].name}</h3>
-                <p>{team[3].role}</p>
-                <div className="description">{team[3].description}</div>
-                <div className="social-links">
-                  <a
-                    href={team[3].linkedin}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={`${team[3].name}'s LinkedIn`}
-                  >
-                    <FontAwesomeIcon icon={faLinkedinIn} size="lg" />
-                  </a>
-                  <a
-                    href={team[3].instagram}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={`${team[3].name}'s Instagram`}
-                  >
-                    <FontAwesomeIcon icon={faInstagram} size="lg" />
-                  </a>
-                </div>
-              </div>
-              
-              <div className="team-member-card">
-                <img src={team[4].imageUrl} alt={team[4].name} />
-                <h3>{team[4].name}</h3>
-                <p>{team[4].role}</p>
-                <div className="description">{team[4].description}</div>
-                <div className="social-links">
-                  <a
-                    href={team[4].linkedin}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={`${team[4].name}'s LinkedIn`}
-                  >
-                    <FontAwesomeIcon icon={faLinkedinIn} size="lg" />
-                  </a>
-                  <a
-                    href={team[4].instagram}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={`${team[4].name}'s Instagram`}
                   >
                     <FontAwesomeIcon icon={faInstagram} size="lg" />
                   </a>
