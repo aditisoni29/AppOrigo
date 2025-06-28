@@ -8,6 +8,7 @@
     "@fortawesome/free-brands-svg-icons": "^6.7.2",
     "@fortawesome/react-fontawesome": "^0.2.2",
     "autoprefixer": "^10.4.20",
+    "aws-sdk": "^2.1692.0",
     "cra-template": "1.2.0",
     "framer-motion": "^12.18.1",
     "lucide-react": "^0.471.1",
