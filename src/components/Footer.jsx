@@ -28,13 +28,13 @@ export default function Footer() {
   const socialLinks = [
     { 
       name: "LinkedIn", 
-      url: "https://www.linkedin.com/company/AppOrigo Technologies", 
+      url: "https://www.linkedin.com/company/apporigo-technologies/", 
       icon: Linkedin,
       color: "linkedin"
     },
     { 
       name: "Instagram", 
-      url: "https://www.instagram.com/app.origo/", 
+      url: "https://www.instagram.com/apporigo/", 
       icon: Instagram,
       color: "instagram" 
     },
