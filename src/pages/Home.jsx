@@ -258,7 +258,7 @@ function Home() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-          {blogData.map((blog) => (
+          {blogData.filter(blog => blog.showOnHome).map((blog) => (
             <motion.div
               className="blog-card rounded-2xl overflow-hidden bg-white/10 backdrop-blur-lg border border-white/10 shadow-2xl hover:scale-105 transition-all duration-400 cursor-pointer"
               key={blog.id}
