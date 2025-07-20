@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/scrolltotop";
+import BlogPage from "./pages/BlogPage";
 
 const Home = lazy(() => import("./pages/Home"));
 const Services = lazy(() => import("./pages/Services"));
@@ -31,6 +32,8 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/terms" element={<Terms/>} />
             <Route path="/privacy" element={<Privacy/>} />
+            <Route path="/blog" element={<BlogPage />} />
+            <Route path="/blog/:blogId" element={<BlogDetail />} />
           </Routes>
         </Suspense>
         <Footer />
