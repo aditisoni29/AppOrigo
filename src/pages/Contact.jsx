@@ -10,6 +10,7 @@ export default function Contact() {
     name: '',
     email: '',
     phone: '',
+    referralSource: '',
     message: ''
   });
 
@@ -32,6 +33,9 @@ export default function Contact() {
       newErrors.phone = "Please fill out this field.";
     } else if (!/^\d{10}$/.test(formData.phone)) {
       newErrors.phone = "Phone number must be exactly 10 digits.";
+    }
+    if (!formData.referralSource || formData.referralSource === "") {
+    newErrors.referralSource = "Please select or enter how you heard about us.";
     }
     if (!formData.message.trim()) newErrors.message = "Please fill out this field.";
     return newErrors;
@@ -58,7 +62,7 @@ export default function Contact() {
       const result = await response.json();
       if (response.ok) {
         alert('Message sent successfully!');
-        setFormData({ name: '', email: '', phone: '', message: '' }); // Clear form after success
+        setFormData({ name: '', email: '', phone: '', referralSource: '', message: '' }); // Clear form after success
       } else {
         alert(result.error || 'Failed to send message.');
       }
@@ -144,6 +148,28 @@ export default function Contact() {
                   />
                   {errors.message && <p className="text-red-400 text-sm">{errors.message}</p>}
                 </div>
+
+                {/*How did you hear about us field */}
+                <div className="form-group">
+                  <label htmlFor="referralSource" className="text-white block mb-2">How did you hear about us?</label>
+                  <select
+                    id="referralSource"
+                    name="referralSource"
+                    value={formData.referralSource}
+                    onChange={(e) => setFormData({ ...formData, referralSource: e.target.value })}
+                    className="w-full bg-transparent border-b-2 border-gray-600 py-3 px-4 text-white focus:outline-none focus:border-yellow-400 transition-all"
+                    required
+                  >
+                    <option value="">-- Select an option --</option>
+                    <option value="Google Search">Google Search</option>
+                    <option value="LinkedIn">LinkedIn</option>
+                    <option value="Referral">Referral</option>
+                    <option value="Social Media">Social Media</option>
+                    <option value="Other">Other</option>
+                  </select>
+                  {errors.referralSource && <p className="text-red-400 text-sm">{errors.referralSource}</p>}
+                </div>
+
 
                 {/* Submit button */}
                 <button

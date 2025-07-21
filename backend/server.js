@@ -12,9 +12,10 @@ app.use(express.json());
 
 app.post('/api/contact', async (req, res) => {
   console.log("📩 Form submitted with data:", req.body);
-  const { name, email, phone, message } = req.body;
+  const { name, email, phone, referralSource, message } = req.body;
 
-  if (!name || !email || !phone || !message) {
+  // 🔍 Validation
+  if (!name || !email || !phone || !referralSource || !message) {
     console.log("❌ Validation error: Missing fields");
     return res.status(400).json({ error: 'All fields are required.' });
   }
@@ -34,24 +35,29 @@ app.post('/api/contact', async (req, res) => {
   try {
     console.log("✅ Entered try block");
 
+    // 📧 Send email
     console.log("📧 Sending email...");
     const transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
         user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS
+        pass: process.env.EMAIL_PASS,
       },
+      tls: {
+        rejectUnauthorized: false
+      }
     });
 
     await transporter.sendMail({
       from: `"${name}" <${email}>`,
       to: process.env.EMAIL_TO,
-      subject: 'New Contact Form Submission',
-      text: `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nMessage: ${message}`,
+      subject: 'New Contact Form Submission from AppOrigo Website',
+      text: `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nReferral Source: ${referralSource}\nMessage: ${message}`,
     });
 
     console.log("✅ Email sent successfully");
 
+    // ☁️ Save to AWS S3
     console.log("🔧 Configuring AWS S3...");
     AWS.config.update({
       accessKeyId: process.env.AWS_ACCESS_KEY_ID,
@@ -62,7 +68,7 @@ app.post('/api/contact', async (req, res) => {
     const s3 = new AWS.S3();
     const timestamp = new Date().toISOString().replace(/:/g, '-');
     const fileName = `contact-submissions/${name}-${timestamp}.json`;
-    const fileContent = JSON.stringify({ name, email, phone, message }, null, 2);
+    const fileContent = JSON.stringify({ name, email, phone, referralSource, message }, null, 2);
 
     const params = {
       Bucket: process.env.AWS_BUCKET_NAME,
@@ -71,21 +77,27 @@ app.post('/api/contact', async (req, res) => {
       ContentType: 'application/json',
     };
 
-    console.log("📤 Prepared S3 params:", params);
-
+    console.log("📤 Uploading to S3...");
     const result = await s3.upload(params).promise();
     console.log('✅ Form submission saved to S3:', result.Location);
 
-    return res.status(200).json({ success: 'Message sent and stored in AWS S3!', s3Url: result.Location });
+    return res.status(200).json({
+      success: 'Message sent and stored in AWS S3!',
+      s3Url: result.Location,
+    });
 
   } catch (error) {
     console.error("❌ Something failed:", error);
-    return res.status(500).json({ error: 'Failed to send message or store data.', details: error.message });
+    return res.status(500).json({
+      error: 'Failed to send message or store data.',
+      details: error.message,
+    });
   }
-  process.on('unhandledRejection', (reason, p) => {
-  console.error('Unhandled Rejection at:', p, 'reason:', reason);
 });
 
+// Global error handling
+process.on('unhandledRejection', (reason, p) => {
+  console.error('Unhandled Rejection at:', p, 'reason:', reason);
 });
 
 const PORT = process.env.PORT || 5000;
