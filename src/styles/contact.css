@@ -234,6 +234,53 @@
   gap: 2rem;
 }
 
+/* Unified select field styling to match contact form inputs */
+#referralSource {
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid rgba(240, 142, 53, 0.2);
+  padding: 1rem 0;
+  color: var(--text-primary);
+  font-size: 1.1rem;
+  font-family: var(--font-primary);
+  transition: all var(--transition-normal);
+  appearance: none;
+  position: relative;
+  z-index: 1;
+}
+
+#referralSource:focus {
+  outline: none;
+  border-bottom-color: var(--primary-orange);
+  box-shadow: 0 2px 8px rgba(240, 142, 53, 0.2);
+}
+
+/* Dropdown options styling */
+#referralSource option {
+  background-color: #111623;
+  color: var(--text-primary);
+  font-family: var(--font-primary);
+  font-size: 1rem;
+  padding: 10px;
+}
+
+#referralSource::-ms-expand {
+  display: none;
+}
+
+/* Error state for border */
+.select-error {
+  border-bottom-color: #f87171;
+}
+
+/* Error message below dropdown */
+.referral-error {
+  color: #f87171;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
 /* Enhanced Submit Button */
 .contact-form button[type="submit"] {
   background: var(--gradient-primary);
