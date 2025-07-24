@@ -23,6 +23,7 @@ import "../styles/BlogPage.css";
                   src={blog.images[0]}
                   alt={blog.category}
                   className="w-full h-[220px] object-cover object-center"
+                  loading="lazy"
                 />
                 <div className="absolute top-4 left-4 bg-gradient-to-r from-orange-400 to-yellow-400 text-black font-semibold px-3 py-1 rounded-full text-xs shadow-lg">
                   {blog.category}

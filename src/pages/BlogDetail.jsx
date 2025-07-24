@@ -97,6 +97,7 @@ function BlogDetail() {
             src={blog.images[0]} 
             alt={blog.title + ' - AppOrigo Blog'} 
             className="w-full h-[400px] object-cover object-center rounded-xl transition-transform duration-300 ease-out"
+            loading="lazy"
             whileHover={{ scale: 1.035 }}
             transition={{ type: "spring", stiffness: 120 }}
           />

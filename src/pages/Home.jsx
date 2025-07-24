@@ -211,7 +211,7 @@ function Home() {
             </Link>
           </div>
           <div className="future-vision-image">
-            <img src={fact_img} alt="Digital Future" />
+            <img src={fact_img} alt="Digital Future" loading="lazy" />
           </div>
         </div>
       </section>
@@ -233,7 +233,7 @@ function Home() {
                 </p>
               </div>
               <div className="testimonial-author">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWfOdWoerP5UOJ3nqzmAl8squti1cxu9lIFw&s" alt="John Smith" />
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWfOdWoerP5UOJ3nqzmAl8squti1cxu9lIFw&s" alt="John Smith" loading="lazy" />
                 <div className="author-info">
                   <h4>Adv. Arvind Soni</h4>
                   <p>CEO, Arvind Soni & Associates</p>
@@ -269,6 +269,7 @@ function Home() {
                   src={blog.images[0]}
                   alt={blog.category}
                   className="w-full h-[220px] object-cover object-center"
+                  loading="lazy"
                 />
                 <div className="absolute top-4 left-4 bg-gradient-to-r from-orange-400 to-yellow-400 text-black font-semibold px-3 py-1 rounded-full text-xs shadow-lg">
                   {blog.category}
@@ -314,7 +315,7 @@ function Home() {
             </a>
           </div>
           <div className="careers-image">
-            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Join Our Team" />
+            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Join Our Team" loading="lazy" />
             <div className="image-overlay"></div>
           </div>
         </div>
