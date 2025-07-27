@@ -1,8 +1,8 @@
 import React from "react";
-import web from "../assets/Services/web.png";
-import app from "../assets/Services/app.png";
-import gd from "../assets/Services/GD.png";
-import uiux from "../assets/Services/uiux.png";
+import web from "../assets/Services/web.webp";
+import app from "../assets/Services/app.webp";
+import gd from "../assets/Services/GD.webp";
+import uiux from "../assets/Services/uiux.webp";
 import { Link } from "react-router-dom";
 import Button, { GlowButton, SecondaryButton } from "../components/Button";
 import "../styles/service.css";
@@ -57,14 +57,14 @@ function Services() {
                 </Button>
               </div>
               <div className="service-image">
-                <img src={web} alt="custom web development India" />
+                <img src={web} alt="custom web development India" loading="lazy" />
               </div>
             </div>
 
             {/* App Development Service */}
             <div className="service-card">
               <div className="service-image">
-                <img src={app} alt="custom app development India" />
+                <img src={app} alt="custom app development India" loading="lazy" />
               </div>
               <div className="service-content">
                 <h2>App Development</h2>
@@ -106,14 +106,14 @@ function Services() {
                 </Button>
               </div>
               <div className="service-image">
-                <img src={uiux} alt="UI/UX Design" />
+                <img src={uiux} alt="UI/UX Design" loading="lazy" />
               </div>
             </div>
 
             {/* Graphic Design Service */}
             <div className="service-card">
               <div className="service-image">
-                <img src={gd} alt="Graphic Design" />
+                <img src={gd} alt="Graphic Design" loading="lazy" />
               </div>
               <div className="service-content">
                 <h2>Graphic Design</h2>

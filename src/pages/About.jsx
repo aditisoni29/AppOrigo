@@ -1,7 +1,7 @@
 import React from 'react';
-import AditiSoni from "../assets/Team/aditi.jpeg";
-import ChitranshSaxena from "../assets/Team/chitransh.svg";
-import VaishnaviParolia from "../assets/Team/vaishnavi.jpeg";
+import AditiSoni from "../assets/Team/aditi.webp";
+import ChitranshSaxena from "../assets/Team/chitransh.webp";
+import VaishnaviParolia from "../assets/Team/vaishnavi.webp";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedinIn, faInstagram } from '@fortawesome/free-brands-svg-icons';
 import "../styles/App.css";
@@ -108,7 +108,7 @@ const About = () => {
             {/* First Row - Aditi and Chitransh */}
             <div className="team-row-1">
               <div className="team-member-card">
-                <img src={team[0].imageUrl} alt={team[0].name} />
+                <img src={team[0].imageUrl} alt={team[0].name} loading="lazy" />
                 <h3>{team[0].name}</h3>
                 <p>{team[0].role}</p>
                 <div className="description">{team[0].description}</div>
@@ -133,7 +133,7 @@ const About = () => {
               </div>
               
               <div className="team-member-card">
-                <img src={team[1].imageUrl} alt={team[1].name} />
+                <img src={team[1].imageUrl} alt={team[1].name} loading="lazy" />
                 <h3>{team[1].name}</h3>
                 <p>{team[1].role}</p>
                 <div className="description">{team[1].description}</div>
@@ -161,7 +161,7 @@ const About = () => {
             {/* Second Row - Vaishnavi only, centered */}
             <div className="team-row-2" style={{ justifyContent: 'center', display: 'flex' }}>
               <div className="team-member-card">
-                <img src={team[2].imageUrl} alt={team[2].name} />
+                <img src={team[2].imageUrl} alt={team[2].name} loading="lazy" />
                 <h3>{team[2].name}</h3>
                 <p>{team[2].role}</p>
                 <div className="description">{team[2].description}</div>

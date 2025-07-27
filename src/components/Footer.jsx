@@ -66,7 +66,7 @@ export default function Footer() {
           <div className="footer-section footer-brand">
             <div className="brand-section">
               <div className="footer-logo">
-                <img src={companyLogo} alt="AppOrigo Technologies Logo" className="logo-image" />
+                <img src={companyLogo} alt="AppOrigo Technologies Logo" className="logo-image" loading="lazy" />
                 <div className="logo-glow-effect"></div>
               </div>
               
