@@ -16,6 +16,56 @@ function Services() {
         <title>Custom Web & App Development India | AppOrigo Services</title>
         <meta name="description" content="AppOrigo Technologies provides custom web & app development in India, offering tailored digital solutions for startups and enterprises." />
         <meta name="robots" content="index, follow" />
+         <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ItemList",
+            "name": "AppOrigo Technologies Services",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "item": {
+                  "@type": "Service",
+                  "name": "Web Development",
+                  "url": "https://www.apporigotechnologies.co.in/services",
+                  "description": "AppOrigo Technologies provides expert web development services including custom websites, e-commerce platforms, web applications, and CMS solutions. We use modern technologies like React, Vue.js, Laravel, and WordPress to deliver fast, secure, and SEO-optimized websites tailored to your business needs."
+                }
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "item": {
+                  "@type": "Service",
+                  "name": "App Development",
+                  "url": "https://www.apporigotechnologies.co.in/services",
+                  "description": "AppOrigo Technologies offers end-to-end app development services, including native iOS and Android apps, cross-platform solutions, API integration, and ongoing maintenance. We build scalable, secure, and high-performance mobile apps using Flutter and React Native."
+                }
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "item": {
+                  "@type": "Service",
+                  "name": "UI/UX Design",
+                  "url": "https://www.apporigotechnologies.co.in/services",
+                  "description": "AppOrigo Technologies delivers intuitive UI/UX design services focused on user engagement and responsiveness. From wireframes to motion graphics, we create mobile-first, visually compelling experiences across all platforms."
+                }
+              },
+              {
+                "@type": "ListItem",
+                "position": 4,
+                "item": {
+                  "@type": "Service",
+                  "name": "Graphic Design",
+                  "url": "https://www.apporigotechnologies.co.in/services",
+                  "description": "AppOrigo Technologies offers creative graphic design services, including logo creation, brand identity, marketing materials, and social media graphics to visually elevate your brand and connect with your audience."
+                }
+              }
+            ]
+          })}
+        </script>
+
       </Helmet>
       {/* Hero Section */}
       <section className="services-hero">

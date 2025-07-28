@@ -2,13 +2,102 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { blogData } from "../styles/BlogData";
 import { motion } from "framer-motion";
+import { Helmet } from "react-helmet";
 import "../styles/BlogPage.css";
 
 
     const BlogPage = () => {
     return (
-
       <section className="blog-section py-20 bg-gradient-to-b from-[#0F111A] via-[#111623] to-[#090D18]">
+      <Helmet>
+        <script type="application/ld+json">
+        {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Blog",
+            "name": "AppOrigo Technologies Blog",
+            "url": "https://www.apporigotechnologies.co.in/blog",
+            "description": "Latest blogs and insights from AppOrigo Technologies on web development, app design, and tech innovation.",
+            "blogPost": [
+              {
+                "@type": "BlogPosting",
+                "headline": "Modern Web Development: Building Scalable Solutions for Tomorrow",
+                "url": "https://www.apporigotechnologies.co.in/blog/modern-web-development",
+                "datePublished": "2025-04-15",
+                "author": {
+                  "@type": "Corporation",
+                  "name": "AppOrigo Technologies"
+                },
+                "publisher": {
+                  "@type": "Corporation",
+                  "name": "AppOrigo Technologies",
+                  "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://www.apporigotechnologies.co.in/static/media/fdgcfghgzs.e3ca80808acb72289777.webp"
+                  }
+                },
+                "description": "Explore how AppOrigo Technologies builds scalable, future-proof web applications using modern frameworks, cloud-native architectures, and advanced optimization techniques for high performance and growth."
+              },
+              {
+                "@type": "BlogPosting",
+                "headline": "The Art of User Experience: Creating Intuitive Digital Interfaces",
+                "url": "https://www.apporigotechnologies.co.in/blog/ui-ux-design",
+                "datePublished": "2025-03-12",
+                "author": {
+                  "@type": "Corporation",
+                  "name": "AppOrigo Technologies"
+                },
+                "publisher": {
+                  "@type": "Corporation",
+                  "name": "AppOrigo Technologies",
+                  "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://www.apporigotechnologies.co.in/static/media/fdgcfghgzs.e3ca80808acb72289777.webp"
+                  }
+                },
+                "description": "Discover how AppOrigo crafts intuitive, accessible digital experiences through user research, design systems, and continuous UX optimization."
+              },
+              {
+                "@type": "BlogPosting",
+                "headline": "Mobile App Development: Crafting Solutions for the Digital Age",
+                "url": "https://www.apporigotechnologies.co.in/blog/app-development",
+                "datePublished": "2025-02-10",
+                "author": {
+                  "@type": "Corporation",
+                  "name": "AppOrigo Technologies"
+                },
+                "publisher": {
+                  "@type": "Corporation",
+                  "name": "AppOrigo Technologies",
+                  "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://www.apporigotechnologies.co.in/static/media/fdgcfghgzs.e3ca80808acb72289777.webp"
+                  }
+                },
+                "description": "Explore how AppOrigo builds secure, scalable, and user-focused mobile apps using native and cross-platform technologies."
+              },
+              {
+                "@type": "BlogPosting",
+                "headline": "Visual Storytelling: The Power of Strategic Graphic Design",
+                "url": "https://www.apporigotechnologies.co.in/blog/graphic-design",
+                "datePublished": "2025-03-08",
+                "author": {
+                  "@type": "Corporation",
+                  "name": "AppOrigo Technologies"
+                },
+                "publisher": {
+                  "@type": "Corporation",
+                  "name": "AppOrigo Technologies",
+                  "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://www.apporigotechnologies.co.in/static/media/fdgcfghgzs.e3ca80808acb72289777.webp"
+                  }
+                },
+                "description": "AppOrigo crafts strategic, scalable graphic designs that elevate brand identity and visual storytelling across all platforms."
+              }
+            ]
+            })}
+        </script>
+      </Helmet>
       <div className="blog-container max-w-7xl mx-auto px-4">
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">

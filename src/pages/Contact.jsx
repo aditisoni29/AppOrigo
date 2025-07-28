@@ -52,8 +52,13 @@ export default function Contact() {
     setErrors({});
     setIsSubmitting(true);
 
+    // Determine the API URL based on environment
+    const apiUrl = process.env.NODE_ENV === 'development' 
+      ? 'http://localhost:5000/api/contact'  // Local development
+      : '/api/contact';  // Production (Vercel)
+
     try {
-      const response = await fetch('https://www.apporigotechnologies.co.in/api/contact', {
+      const response = await fetch(apiUrl, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)
@@ -79,6 +84,55 @@ export default function Contact() {
         {/* Meta tags for SEO */}
         <title>Contact AppOrigoTechnologies | Get in Touch</title>
         <meta name="description" content="Contact AppOrigoTechnologies for custom web, app, and design solutions." />
+
+        <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "ContactPage",
+          "name": "Contact AppOrigo Technologies",
+          "url": "https://www.apporigotechnologies.co.in/contact",
+          "mainEntity": {
+            "@type": "Corporation",
+            "name": "AppOrigo Technologies",
+            "url": "https://www.apporigotechnologies.co.in/",
+            "logo": "https://www.apporigotechnologies.co.in/static/media/fdgcfghgzs.e3ca80808acb72289777.webp",
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "telephone": "+91-7014264024",
+              "email": "info.apporigo@gmail.com",
+              "contactType": "Customer Support",
+              "areaServed": "IN",
+              "availableLanguage": ["en", "Hindi"]
+            },
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Nandpuri Colony Hawa Sadak",
+              "addressLocality": "Jaipur",
+              "addressRegion": "Rajasthan",
+              "postalCode": "302019",
+              "addressCountry": "IN"
+            },
+            "openingHoursSpecification": [
+              {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": [
+                  "Monday",
+                  "Tuesday",
+                  "Wednesday",
+                  "Thursday",
+                  "Friday"
+                ],
+                "opens": "09:00",
+                "closes": "18:00"
+              }
+            ],
+            "sameAs": [
+              "https://www.linkedin.com/company/apporigo-technologies/",
+              "https://www.instagram.com/apporigo/"
+            ]
+          }
+        })}
+      </script>
       </Helmet>
 
       {/* Background overlay */}
