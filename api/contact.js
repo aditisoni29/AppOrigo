@@ -1,23 +1,26 @@
-console.log("🟢 Starting server.js...");
-
-const express = require('express');
-const cors = require('cors');
 const nodemailer = require('nodemailer');
 const AWS = require('aws-sdk');
-require('dotenv').config();
 
-const app = express();
+export default async function handler(req, res) {
+  // Set CORS headers
+  res.setHeader('Access-Control-Allow-Credentials', true);
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS,PATCH,DELETE,POST,PUT');
+  res.setHeader(
+    'Access-Control-Allow-Headers',
+    'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version'
+  );
 
-// Configure CORS to allow requests from frontend
-app.use(cors({
-  origin: ['http://localhost:3000', 'https://www.apporigotechnologies.co.in'],
-  methods: ['GET', 'POST', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization']
-}));
+  // Handle OPTIONS request for CORS preflight
+  if (req.method === 'OPTIONS') {
+    return res.status(200).end();
+  }
 
-app.use(express.json());
+  // Only allow POST method
+  if (req.method !== 'POST') {
+    return res.status(405).json({ error: 'Method not allowed' });
+  }
 
-app.post('/api/contact', async (req, res) => {
   console.log("📩 Form submitted with data:", req.body);
   const { name, email, phone, referralSource, message } = req.body;
 
@@ -100,12 +103,4 @@ app.post('/api/contact', async (req, res) => {
       details: error.message,
     });
   }
-});
-
-// Global error handling
-process.on('unhandledRejection', (reason, p) => {
-  console.error('Unhandled Rejection at:', p, 'reason:', reason);
-});
-
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
+} 

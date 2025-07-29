@@ -1,0 +1,56 @@
+.breadcrumb-container {
+  padding: 1rem 0;
+  background-color: transparent;
+  margin-bottom: 1rem;
+}
+
+.breadcrumb-list {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 0.9rem;
+}
+
+.breadcrumb-item {
+  display: flex;
+  align-items: center;
+  color: #666;
+}
+
+.breadcrumb-item a {
+  color: #e29349; /* Using your site's accent color */
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.breadcrumb-item a:hover {
+  color: #c97c2f;
+  text-decoration: underline;
+}
+
+.breadcrumb-separator {
+  margin: 0 0.5rem;
+  color: #999;
+}
+
+.breadcrumb-item.active {
+  color: #333;
+  font-weight: 500;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .breadcrumb-container {
+    padding: 0.75rem 0;
+  }
+  
+  .breadcrumb-list {
+    font-size: 0.8rem;
+  }
+  
+  .breadcrumb-separator {
+    margin: 0 0.3rem;
+  }
+} 

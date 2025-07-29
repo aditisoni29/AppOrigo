@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/scrolltotop";
+import Breadcrumb from "./components/Breadcrumb";
+import "./styles/breadcrumb.css";
 
 const Home = lazy(() => import("./pages/Home"));
 const Services = lazy(() => import("./pages/Services"));
@@ -21,6 +23,9 @@ function App() {
       <ScrollToTop/>
       <div>
         <Navbar />
+        <div className="container mx-auto px-4">
+          <Breadcrumb />
+        </div>
         <Suspense fallback={<div style={{color: 'white', textAlign: 'center', marginTop: '2rem'}}>Loading...</div>}>
           <Routes>
             <Route path="/" element={<Home />} />
