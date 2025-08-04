@@ -29,6 +29,10 @@ app.use(express.json());
 app.use('/api/comments', commentRoutes);
 app.use('/api/contact', contactRoutes);
 
+app.get('/', (req, res) => {
+  res.send('🚀 Welcome to AppOrigo Technologies Backend API');
+});
+
 // Health check endpoint
 app.get('/api/health', (req, res) => {
   res.json({ 

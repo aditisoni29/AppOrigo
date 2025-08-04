@@ -1,24 +1,15 @@
-
 {
-  "version": 2,
-  "builds": [
-    {
-      "src": "./server.js",
-      "use": "@vercel/node"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/api/comments/(.*)",
-      "dest": "/server.js"
-    },
-    {
-      "src": "/api/health",
-      "dest": "/server.js"
-    },
-    {
-      "src": "/api/contact",
-      "dest": "/server.js"
-    }
-  ]
-}
+    "builds": [
+      {
+        "src": "./server.js",
+        "use": "@vercel/node"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/(.*)",
+        "dest": "/server.js"
+      }
+    ]
+  }
+  
