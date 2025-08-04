@@ -12,6 +12,7 @@
     "cra-template": "1.2.0",
     "framer-motion": "^12.18.1",
     "lucide-react": "^0.471.1",
+    "node-fetch": "^3.3.2",
     "nodemailer": "^7.0.3",
     "postcss": "^8.4.49",
     "react": "^19.0.0",
