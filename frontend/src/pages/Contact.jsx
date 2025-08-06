@@ -52,10 +52,9 @@ export default function Contact() {
     setErrors({});
     setIsSubmitting(true);
 
-    // Determine the API URL based on environment
-    const apiUrl = process.env.NODE_ENV === 'development' 
-      ? 'http://localhost:5000/api/contact'  // Local development
-      : '/api/contact';  // Production (Vercel)
+     // Determine the API URL based on environment
+    const apiUrl = `${process.env.REACT_APP_BACKEND_URL}/contact`;
+
 
     try {
       const response = await fetch(apiUrl, {
