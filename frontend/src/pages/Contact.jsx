@@ -52,9 +52,8 @@ export default function Contact() {
     setErrors({});
     setIsSubmitting(true);
 
-     // Determine the API URL based on environment
+    // Determine the API URL based on environment
     const apiUrl = `${process.env.REACT_APP_BACKEND_URL}/contact`;
-
 
     try {
       const response = await fetch(apiUrl, {
