@@ -1,5 +1,5 @@
 // API service for comment operations
-const API_BASE_URL = process.env.REACT_APP_BACKEND_URL || (process.env.NODE_ENV === 'development' ? 'http://localhost:5000/api' : 'https://your-backend-url.vercel.app/api');
+const API_BASE_URL = process.env.REACT_APP_BACKEND_URL || (process.env.NODE_ENV === 'development' ? 'http://localhost:5000/api' : 'https://apporigotechnologies.vercel.app/api');
 
 class CommentApiService {
   // Get comments for a specific blog post
