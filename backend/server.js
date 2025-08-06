@@ -2,104 +2,40 @@ console.log("🟢 Starting server.js...");
 
 const express = require('express');
 const cors = require('cors');
-const nodemailer = require('nodemailer');
-const AWS = require('aws-sdk');
 require('dotenv').config();
+
+// Import comment routes
+const commentRoutes = require('./routes/comments');
+const contactRoutes = require('./routes/contact');
+const { connectToDatabase } = require('./config/database');
 
 const app = express();
 
 // Configure CORS to allow requests from frontend
 app.use(cors({
-  origin: ['http://localhost:3000', 'https://www.apporigotechnologies.co.in'],
+  origin: [
+    'http://localhost:3000', 
+    'https://www.apporigotechnologies.co.in',
+    'https://apporigotechnologies.co.in',
+    process.env.FRONTEND_URL // Add this for flexibility
+  ].filter(Boolean), // Remove undefined values
   methods: ['GET', 'POST', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization']
 }));
 
 app.use(express.json());
 
-app.post('/api/contact', async (req, res) => {
-  console.log("📩 Form submitted with data:", req.body);
-  const { name, email, phone, referralSource, message } = req.body;
+// Use comment routes
+app.use('/api/comments', commentRoutes);
+app.use('/api/contact', contactRoutes);
 
-  // 🔍 Validation
-  if (!name || !email || !phone || !referralSource || !message) {
-    console.log("❌ Validation error: Missing fields");
-    return res.status(400).json({ error: 'All fields are required.' });
-  }
-
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (!emailRegex.test(email)) {
-    console.log("❌ Validation error: Invalid email");
-    return res.status(400).json({ error: 'Invalid email format.' });
-  }
-
-  const digitsOnly = phone.replace(/\D/g, '');
-  if (digitsOnly.length < 10) {
-    console.log("❌ Validation error: Phone number too short");
-    return res.status(400).json({ error: 'Phone number must be at least 10 digits.' });
-  }
-
-  try {
-    console.log("✅ Entered try block");
-
-    // 📧 Send email
-    console.log("📧 Sending email...");
-    const transporter = nodemailer.createTransport({
-      service: 'gmail',
-      auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS,
-      },
-      tls: {
-        rejectUnauthorized: false
-      }
-    });
-
-    await transporter.sendMail({
-      from: `"${name}" <${email}>`,
-      to: process.env.EMAIL_TO,
-      subject: 'New Contact Form Submission from AppOrigo Website',
-      text: `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nReferral Source: ${referralSource}\nMessage: ${message}`,
-    });
-
-    console.log("✅ Email sent successfully");
-
-    // ☁️ Save to AWS S3
-    console.log("🔧 Configuring AWS S3...");
-    AWS.config.update({
-      accessKeyId: process.env.AWS_ACCESS_KEY_ID,
-      secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
-      region: process.env.AWS_REGION,
-    });
-
-    const s3 = new AWS.S3();
-    const timestamp = new Date().toISOString().replace(/:/g, '-');
-    const fileName = `contact-submissions/${name}-${timestamp}.json`;
-    const fileContent = JSON.stringify({ name, email, phone, referralSource, message }, null, 2);
-
-    const params = {
-      Bucket: process.env.AWS_BUCKET_NAME,
-      Key: fileName,
-      Body: fileContent,
-      ContentType: 'application/json',
-    };
-
-    console.log("📤 Uploading to S3...");
-    const result = await s3.upload(params).promise();
-    console.log('✅ Form submission saved to S3:', result.Location);
-
-    return res.status(200).json({
-      success: 'Message sent and stored in AWS S3!',
-      s3Url: result.Location,
-    });
-
-  } catch (error) {
-    console.error("❌ Something failed:", error);
-    return res.status(500).json({
-      error: 'Failed to send message or store data.',
-      details: error.message,
-    });
-  }
+// Health check endpoint
+app.get('/api/health', (req, res) => {
+  res.json({ 
+    status: 'OK', 
+    message: 'MongoDB Comment Backend is running',
+    timestamp: new Date().toISOString()
+  });
 });
 
 // Global error handling
@@ -108,4 +44,22 @@ process.on('unhandledRejection', (reason, p) => {
 });
 
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
+
+// Initialize database connection and start server
+async function startServer() {
+  try {
+    // Connect to MongoDB
+    await connectToDatabase();
+    
+    // Start the server
+    app.listen(PORT, () => {
+      console.log(`🚀 Server running on port ${PORT}`);
+      console.log(`📊 MongoDB Atlas connected successfully!`);
+    });
+  } catch (error) {
+    console.error('❌ Failed to start server:', error);
+    process.exit(1);
+  }
+}
+
+startServer();

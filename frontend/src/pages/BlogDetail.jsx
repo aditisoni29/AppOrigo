@@ -3,6 +3,7 @@ import { useParams, Link } from "react-router-dom";
 import { blogData } from "../styles/BlogData";
 import { Helmet } from "react-helmet";
 import { motion } from "framer-motion";
+import CommentSection from "../components/CommentSection";
 
 function BlogDetail() {
   const { blogId } = useParams();
@@ -113,6 +114,9 @@ function BlogDetail() {
             <p key={index}>{paragraph}</p>
           ))}
         </div>
+
+        {/* Comment Section */}
+        <CommentSection blogId={blogId} blogTitle={blog.title} />
       </motion.div>
     </div>
   );

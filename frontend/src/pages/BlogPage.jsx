@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { blogData } from "../styles/BlogData";
 import { motion } from "framer-motion";
 import { Helmet } from "react-helmet";
+import CommentPreview from "../components/CommentPreview";
 import "../styles/BlogPage.css";
 
 
@@ -75,6 +76,47 @@ import "../styles/BlogPage.css";
                 },
                 "description": "Explore how AppOrigo builds secure, scalable, and user-focused mobile apps using native and cross-platform technologies."
               },
+
+               {
+                "@type": "BlogPosting",
+                "headline": "From Idea to App store”: A Complete guide for App Development",
+                "url": "https://www.apporigotechnologies.co.in/blog/custom-app-development",
+                "datePublished": "2025-01-08",
+                "author": {
+                  "@type": "Corporation",
+                  "name": "AppOrigo Technologies"
+                },
+                "publisher": {
+                  "@type": "Corporation",
+                  "name": "AppOrigo Technologies",
+                  "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://www.apporigotechnologies.co.in/static/media/fdgcfghgzs.e3ca80808acb72289777.webp"
+                  }
+                },
+                "description": "From Idea to App Store: by AppOrigo Technologies is a comprehensive guide that walks you through every stage of mobile app development — from ideation and market research to UI/UX design, backend/frontend development, testing, launch, and post-launch maintenance. Perfect for startups and businesses, this guide helps you turn your vision into a successful, high-performing app."
+              },
+
+              {
+                "@type": "BlogPosting",
+                "headline": "From Clicks to Answers: The Shift from SEO to AEO",
+                "url": "https://www.apporigotechnologies.co.in/blog/digital-marketing",
+                "datePublished": "2025-01-08",
+                "author": {
+                  "@type": "Corporation",
+                  "name": "AppOrigo Technologies"
+                },
+                "publisher": {
+                  "@type": "Corporation",
+                  "name": "AppOrigo Technologies",
+                  "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://www.apporigotechnologies.co.in/static/media/fdgcfghgzs.e3ca80808acb72289777.webp"
+                  }
+                },
+                "description": " The Shift from SEO to AEO"
+              },
+
               {
                 "@type": "BlogPosting",
                 "headline": "Visual Storytelling: The Power of Strategic Graphic Design",
@@ -132,9 +174,12 @@ import "../styles/BlogPage.css";
                   </span>
                 </div>
 
+                {/* Comment Preview */}
+                <CommentPreview blogId={blog.id} />
+
                 <Link
                   to={`/blog/${blog.id}`}
-                  className="inline-flex items-center gap-2 text-orange-400 font-semibold hover:underline"
+                  className="inline-flex items-center gap-2 text-orange-400 font-semibold hover:underline mt-4"
                 >
                   Read Article <span className="cta-arrow">→</span>
                 </Link>
