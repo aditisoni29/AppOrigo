@@ -11,6 +11,7 @@ export default function Contact() {
     email: '',
     phone: '',
     referralSource: '',
+    serviceRequired: '',
     message: ''
   });
 
@@ -35,7 +36,10 @@ export default function Contact() {
       newErrors.phone = "Phone number must be exactly 10 digits.";
     }
     if (!formData.referralSource || formData.referralSource === "") {
-    newErrors.referralSource = "Please select or enter how you heard about us.";
+      newErrors.referralSource = "Please select or enter how you heard about us.";
+    }
+    if (!formData.serviceRequired || formData.serviceRequired === "") {
+      newErrors.serviceRequired = "Please select a service.";
     }
     if (!formData.message.trim()) newErrors.message = "Please fill out this field.";
     return newErrors;
@@ -65,7 +69,7 @@ export default function Contact() {
       const result = await response.json();
       if (response.ok) {
         alert('Message sent successfully!');
-        setFormData({ name: '', email: '', phone: '', referralSource: '', message: '' }); // Clear form after success
+        setFormData({ name: '', email: '', phone: '', referralSource: '', serviceRequired: '', message: '' }); // Clear form after success
       } else {
         alert(result.error || 'Failed to send message.');
       }
@@ -220,6 +224,26 @@ export default function Contact() {
                     <option value="Other">Other</option>
                   </select>
                   {errors.referralSource && <p className="text-red-400 text-sm">{errors.referralSource}</p>}
+                </div>
+
+                {/* Service Required field */}
+                <div className="form-group">
+                  <label htmlFor="serviceRequired" className="text-white block mb-2">Service required</label>
+                  <select
+                    id="serviceRequired"
+                    name="serviceRequired"
+                    value={formData.serviceRequired}
+                    onChange={(e) => setFormData({ ...formData, serviceRequired: e.target.value })}
+                    className="w-full bg-transparent border-b-2 border-gray-600 py-3 px-4 text-white focus:outline-none focus:border-yellow-400 transition-all"
+                    required
+                  >
+                    <option value="">-- Select a service --</option>
+                    <option value="Web Development">Web Development</option>
+                    <option value="App Development">App Development</option>
+                    <option value="UI/UX design">UI/UX design</option>
+                    <option value="Graphic Design">Graphic Design</option>
+                  </select>
+                  {errors.serviceRequired && <p className="text-red-400 text-sm">{errors.serviceRequired}</p>}
                 </div>
 
 

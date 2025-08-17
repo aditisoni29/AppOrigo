@@ -4,7 +4,7 @@ export const blogData = [
     category: "Web Development",
     title: "Modern Web Development: Building Scalable Solutions for Tomorrow",
     date: "April 15, 2025",
-    showOnHome: true,
+    showOnHome: false,
     images: [
       "https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-4.0.3&auto=format&fit=crop&w=2064&q=80",
     ],
@@ -20,7 +20,7 @@ export const blogData = [
     category: "UI/UX Design",
     title: "The Art of User Experience: Creating Intuitive Digital Interfaces",
     date: "March 12, 2025",
-    showOnHome: true,
+    showOnHome: false,
     images: [
       "https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=2064&q=80"
     ],
@@ -52,7 +52,7 @@ export const blogData = [
     category: "Custom App Development",
     title: "From Idea to App store: A Complete guide for App Development ",
     date: "August 1, 2025",
-    showOnHome: false,
+    showOnHome: true,
     images: [
       "https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=2074&q=80",
     ],
@@ -77,7 +77,7 @@ export const blogData = [
     category: "Digital Marketing",
     title: "From Clicks to Answers: The Shift from SEO to AEO",
     date: "August 1, 2025",
-    showOnHome: false,
+    showOnHome: true,
     images: [
       "https://images.unsplash.com/photo-1626785774573-4b799315345d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2071&q=80",
     ],
@@ -165,7 +165,7 @@ export const blogData = [
     category: "Graphic Design",
     title: "Visual Storytelling: The Power of Strategic Graphic Design",
     date: "March 8, 2025",
-    showOnHome: true,
+    showOnHome: false,
     images: [
       "https://images.unsplash.com/photo-1626785774573-4b799315345d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2071&q=80"
     ],
