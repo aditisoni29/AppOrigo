@@ -256,6 +256,29 @@
   box-shadow: 0 2px 8px rgba(240, 142, 53, 0.2);
 }
 
+
+/* Unified select field styling to match contact form inputs */
+#serviceRequired {
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid rgba(240, 142, 53, 0.2);
+  padding: 1rem 0;
+  color: var(--text-primary);
+  font-size: 1.1rem;
+  font-family: var(--font-primary);
+  transition: all var(--transition-normal);
+  appearance: none;
+  position: relative;
+  z-index: 1;
+}
+
+#serviceRequired:focus {
+  outline: none;
+  border-bottom-color: var(--primary-orange);
+  box-shadow: 0 2px 8px rgba(240, 142, 53, 0.2);
+}
+
 /* Dropdown options styling */
 #referralSource option {
   background-color: #111623;
@@ -268,6 +291,19 @@
 #referralSource::-ms-expand {
   display: none;
 }
+
+#serviceRequired option {
+  background-color: #111623;
+  color: var(--text-primary);
+  font-family: var(--font-primary);
+  font-size: 1rem;
+  padding: 10px;
+}
+
+#serviceRequired::-ms-expand {
+  display: none;
+}
+
 
 /* Error state for border */
 .select-error {

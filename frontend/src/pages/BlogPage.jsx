@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { blogData } from "../styles/BlogData";
 import { motion } from "framer-motion";
@@ -7,9 +7,44 @@ import CommentPreview from "../components/CommentPreview";
 import "../styles/BlogPage.css";
 
 
-    const BlogPage = () => {
-    return (
-      <section className="blog-section py-20 bg-gradient-to-b from-[#0F111A] via-[#111623] to-[#090D18]">
+const CATEGORIES = [
+  "All",
+  "Tech Insights",
+  "Startup Insights",
+  "Development",
+  "Client Testimonials"
+];
+
+const CATEGORY_MAP = {
+  "Tech Insights": ["Web Development", "App Development", "UI/UX Design", "Custom App Development"],
+  "Startup Insights": ["Digital Marketing"],
+  "Development": ["Web Development", "App Development", "Custom App Development", "UI/UX Design", "Graphic Design"],
+  "Client Testimonials": ["Client Testimonials"] // Adjust if/when you add such posts
+};
+
+const BlogPage = () => {
+  const [selectedCategory, setSelectedCategory] = useState("All");
+  const [searchQuery, setSearchQuery] = useState("");
+
+  // Filtering logic
+  const categoryFilteredBlogs = selectedCategory === "All"
+    ? blogData
+    : blogData.filter(blog => {
+        const mapped = CATEGORY_MAP[selectedCategory] || [];
+        return mapped.includes(blog.category);
+      });
+
+  const filteredBlogs = categoryFilteredBlogs.filter((blog) => {
+    if (!searchQuery.trim()) return true;
+    const q = searchQuery.toLowerCase();
+    const title = (blog.title || "").toLowerCase();
+    const content = (blog.content || []).join(" ").toLowerCase();
+    const category = (blog.category || "").toLowerCase();
+    return title.includes(q) || content.includes(q) || category.includes(q);
+  });
+
+  return (
+    <section className="blog-section py-20 bg-gradient-to-b from-[#0F111A] via-[#111623] to-[#090D18]">
       <Helmet>
         <script type="application/ld+json">
         {JSON.stringify({
@@ -141,9 +176,39 @@ import "../styles/BlogPage.css";
         </script>
       </Helmet>
       <div className="blog-container max-w-7xl mx-auto px-4">
-
+        {/* Filters + Search */}
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-10">
+          <div className="flex flex-wrap gap-3">
+            {CATEGORIES.map((cat) => (
+              <button
+                key={cat}
+                className={`px-5 py-2 rounded-full font-semibold border transition-all duration-200 text-sm shadow-md
+                  ${selectedCategory === cat
+                    ? "bg-gradient-to-r from-orange-400 to-yellow-400 text-black border-orange-300"
+                    : "bg-white/10 text-white border-white/20 hover:bg-orange-400 hover:text-black hover:border-orange-300"}
+                `}
+                onClick={() => setSelectedCategory(cat)}
+              >
+                {cat}
+              </button>
+            ))}
+          </div>
+          <form className="w-full md:w-auto md:ml-auto" onSubmit={(e) => e.preventDefault()}>
+            <label htmlFor="blog-search" className="sr-only">Search blogs</label>
+            <input
+              id="blog-search"
+              type="text"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              placeholder="Search blogs..."
+              className="w-full md:w-72 bg-white/10 text-white placeholder-gray-400 border border-white/20 rounded-full px-4 py-2 focus:outline-none focus:border-orange-400 focus:ring-2 focus:ring-orange-400/40"
+              aria-label="Search blogs"
+            />
+          </form>
+        </div>
+        {/* Blog Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-          {blogData.map((blog) => (
+          {filteredBlogs.map((blog) => (
             <motion.div
               className="blog-card rounded-2xl overflow-hidden bg-white/10 backdrop-blur-lg border border-white/10 shadow-2xl hover:scale-105 transition-all duration-400 cursor-pointer"
               key={blog.id}
@@ -189,7 +254,7 @@ import "../styles/BlogPage.css";
         </div>
       </div>
     </section>
-      );
+  );
 };
 
 export default BlogPage;

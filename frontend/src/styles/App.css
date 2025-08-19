@@ -2189,3 +2189,91 @@ p {
   /* outline: 2px solid var(--primary-orange); */ /* Removed outline */
   /* outline-offset: 2px; */ /* Removed outline offset */
 }
+
+/* === Click-to-Call Button Styles === */
+.call-now-desktop {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-left: 2rem;
+  background: var(--gradient-primary);
+  color: #fff;
+  border-radius: 16px;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  font-size: 1rem;
+  box-shadow: var(--shadow-orange);
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  outline: none;
+}
+.call-now-desktop .call-now-number {
+  margin-left: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  color: #fff;
+  letter-spacing: 0.02em;
+}
+.call-now-desktop:hover,
+.call-now-desktop:focus-visible {
+  background: var(--gradient-primary);
+  color: #fff;
+  box-shadow: var(--shadow-glow);
+  transform: translateY(-2px) scale(1.03);
+}
+
+/* Hide desktop call button on mobile */
+@media (max-width: 768px) {
+  .call-now-desktop {
+    display: none !important;
+  }
+}
+
+/* Sticky Mobile Call Button */
+.call-now-mobile {
+  display: none;
+  position: fixed;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  z-index: 2000;
+  background: var(--gradient-primary);
+  color: #fff;
+  border-radius: 50px;
+  padding: 1rem 1.5rem;
+  font-weight: 700;
+  font-size: 1.1rem;
+  box-shadow: 0 8px 32px rgba(240, 142, 53, 0.3);
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  align-items: center;
+  gap: 0.5rem;
+  outline: none;
+  animation: ctaPulse 2s ease-in-out infinite;
+}
+.call-now-mobile .call-now-number {
+  margin-left: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  color: #fff;
+  letter-spacing: 0.02em;
+}
+.call-now-mobile:hover,
+.call-now-mobile:focus-visible {
+  background: var(--gradient-primary);
+  color: #fff;
+  box-shadow: var(--shadow-glow);
+  transform: translateY(-2px) scale(1.03);
+}
+@media (max-width: 768px) {
+  .call-now-mobile {
+    display: flex;
+  }
+}
+@media (min-width: 769px) {
+  .call-now-mobile {
+    display: none !important;
+  }
+}

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown, Phone } from "lucide-react";
 import Dropdown from "./Dropdown";
 import newCompanyLogo from "../assets/fdgcfghgzs.webp";
 
@@ -40,6 +40,9 @@ const Navbar = () => {
     { path: "/contact", label: "Contact" }
   ];
 
+  const PHONE_NUMBER = "+91 7742716633";
+  const PHONE_TEL = "tel:+917742716633";
+
   return (
     <nav className={`navbar-container ${scrolled ? 'navbar-scrolled' : ''}`}>
       <div className="navbar-content">
@@ -74,6 +77,17 @@ const Navbar = () => {
             ))}
             <Dropdown title="About" links={["About", "Mission"]} isMobile={false} />
           </div>
+          {/* Click-to-Call Button for Desktop */}
+          <a
+            href={PHONE_TEL}
+            className="navbar-cta-button pulse call-now-desktop"
+            aria-label={`Call us now at ${PHONE_NUMBER}`}
+            tabIndex={0}
+          >
+            <Phone size={18} style={{marginRight: '0.5rem'}} aria-hidden="true" />
+            <span className="call-now-text">Call Now</span>
+            {/* <span className="call-now-number">{PHONE_NUMBER}</span> */}
+          </a>
         </div>
 
         {/* Mobile Menu Toggle */}
@@ -107,11 +121,21 @@ const Navbar = () => {
               </Link>
             ))}
           </div>
-          
         </div>
-        
         <div className="mobile-menu-overlay" onClick={() => setIsOpen(false)}></div>
       </div>
+
+      {/* Sticky Click-to-Call Button for Mobile */}
+      <a
+        href={PHONE_TEL}
+        className="call-now-mobile"
+        aria-label={`Call us now at ${PHONE_NUMBER}`}
+        tabIndex={0}
+      >
+        <Phone size={22} style={{marginRight: '0.5rem'}} aria-hidden="true" />
+        <span className="call-now-text">Call Now</span>
+        {/* <span className="call-now-number">{PHONE_NUMBER}</span> */}
+      </a>
     </nav>
   );
 };
