@@ -132,8 +132,10 @@ const Navbar = () => {
         aria-label={`Call us now at ${PHONE_NUMBER}`}
         tabIndex={0}
       >
-        <Phone size={22} style={{marginRight: '0.5rem'}} aria-hidden="true" />
-        <span className="call-now-text">Call Now</span>
+        <Phone size={22} aria-hidden="true" />
+        <span className="call-now-text" style={{display: 'none'}}>
+          Call Now
+        </span>
         {/* <span className="call-now-number">{PHONE_NUMBER}</span> */}
       </a>
     </nav>

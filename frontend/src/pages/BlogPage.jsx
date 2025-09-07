@@ -170,6 +170,63 @@ const BlogPage = () => {
                   }
                 },
                 "description": "AppOrigo crafts strategic, scalable graphic designs that elevate brand identity and visual storytelling across all platforms."
+              },
+              {
+                "@type": "BlogPosting",
+                "headline": "GEO Explained: Winning Visibility in the Age of ChatGPT and AI Search",
+                "url": "https://www.apporigotechnologies.co.in/blog/geo-explained",
+                "datePublished": "2025-09-07",
+                "author": {
+                  "@type": "Corporation",
+                  "name": "AppOrigo Technologies"
+                },
+                "publisher": {
+                  "@type": "Corporation",
+                  "name": "AppOrigo Technologies",
+                  "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://www.apporigotechnologies.co.in/static/media/fdgcfghgzs.e3ca80808acb72289777.webp"
+                  }
+                },
+                "description": "This blog explains Generative Engine Optimization (GEO) — the practice of making brands visible inside AI-generated answers on platforms like ChatGPT, Google SGE, and Perplexity. It compares GEO with SEO and AEO, highlights why it’s crucial in today’s AI-driven search landscape, and outlines practical strategies to future-proof your digital presence."
+              },
+              {
+                "@type": "BlogPosting",
+                "headline": "What’s Next in Digital Marketing? Key Trends for Businesses",
+                "url": "https://www.apporigotechnologies.co.in/blog/digital-marketing-trends",
+                "datePublished": "2025-09-07",
+                "author": {
+                  "@type": "Corporation",
+                  "name": "AppOrigo Technologies"
+                },
+                "publisher": {
+                  "@type": "Corporation",
+                  "name": "AppOrigo Technologies",
+                  "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://www.apporigotechnologies.co.in/static/media/fdgcfghgzs.e3ca80808acb72289777.webp"
+                  }
+                },
+                "description": "This blog highlights the key trends shaping the future of digital marketing, from AI and automation to content evolution and social media shifts, helping businesses stay ahead in a fast-changing landscape."
+              },
+              {
+                "@type": "BlogPosting",
+                "headline": "AI in Mobile Applications: Pros, Cons and Future Potential",
+                "url": "https://www.apporigotechnologies.co.in/blog/ai-in-mobile-applications",
+                "datePublished": "2025-09-07",
+                "author": {
+                  "@type": "Corporation",
+                  "name": "AppOrigo Technologies"
+                },
+                "publisher": {
+                  "@type": "Corporation",
+                  "name": "AppOrigo Technologies",
+                  "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://www.apporigotechnologies.co.in/static/media/fdgcfghgzs.e3ca80808acb72289777.webp"
+                  }
+                },
+                "description": "This blog explores how AI is reshaping mobile app development — from cost reduction and faster launches to personalized user experiences and enhanced security — while addressing its challenges and future potential with 5G, conversational AI, and advanced cybersecurity."
               }
             ]
             })}

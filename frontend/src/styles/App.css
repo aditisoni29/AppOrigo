@@ -2252,26 +2252,50 @@ p {
   gap: 0.5rem;
   outline: none;
   animation: ctaPulse 2s ease-in-out infinite;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
-.call-now-mobile .call-now-number {
-  margin-left: 0.5rem;
-  font-family: var(--font-mono);
-  font-size: 1rem;
-  color: #fff;
-  letter-spacing: 0.02em;
-}
-.call-now-mobile:hover,
-.call-now-mobile:focus-visible {
-  background: var(--gradient-primary);
-  color: #fff;
-  box-shadow: var(--shadow-glow);
-  transform: translateY(-2px) scale(1.03);
-}
+
 @media (max-width: 768px) {
   .call-now-mobile {
     display: flex;
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    left: auto;
+    bottom: auto;
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    min-height: 44px;
+    max-width: 48px;
+    max-height: 48px;
+    padding: 0;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    box-shadow: 0 4px 16px rgba(240, 142, 53, 0.25);
+    margin: 0;
+  }
+  .call-now-mobile .call-now-text {
+    display: none;
   }
 }
+
+@media (max-width: 480px) {
+  .call-now-mobile {
+    top: 0.5rem;
+    right: 0.5rem;
+    width: 38px;
+    height: 38px;
+    min-width: 38px;
+    min-height: 38px;
+    max-width: 40px;
+    max-height: 40px;
+    font-size: 0.95rem;
+  }
+}
+
 @media (min-width: 769px) {
   .call-now-mobile {
     display: none !important;
