@@ -8,6 +8,8 @@ import { Link } from "react-router-dom";
 import { blogData } from "../styles/BlogData";
 import { motion } from "framer-motion";
 import { Helmet } from "react-helmet";
+import FAQ from "../components/FAQ";
+import faqsData from "../data/faqs.json";
 
 
 function Home() {
@@ -320,6 +322,9 @@ function Home() {
           </div>
         </div>
       </section>
+
+      {/* FAQ Section */}
+      <FAQ faqs={faqsData} />
       <img src={Careerimg} alt="software solutions for startups team" style={{display:'none'}} />
       <img src={fact_img} alt="startup software solutions facts" style={{display:'none'}} />
     </div>

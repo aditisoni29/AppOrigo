@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "question": "What services does AppOrigo Technologies offer?",
+    "answer": "AppOrigo Technologies offers comprehensive software solutions including web development, mobile app development, UI/UX design, and graphic design services. We specialize in creating custom solutions for startups and businesses looking to establish a strong digital presence."
+  },
+  {
+    "id": 2,
+    "question": "How long does it typically take to complete a project?",
+    "answer": "Project timelines vary depending on complexity and scope. A simple website might take 2-4 weeks, while complex applications can take 2-6 months. We provide detailed timelines during the initial consultation and keep you updated throughout the development process."
+  },
+  {
+    "id": 3,
+    "question": "Do you provide ongoing support after project completion?",
+    "answer": "Yes, we offer comprehensive post-launch support including maintenance, updates, bug fixes, and technical support. We believe in building long-term partnerships with our clients to ensure their digital solutions continue to perform optimally."
+  },
+  {
+    "id": 4,
+    "question": "What technologies do you use for development?",
+    "answer": "We use modern, cutting-edge technologies including React, Node.js, Python, Flutter, and various cloud platforms. Our technology stack is chosen based on project requirements to ensure scalability, performance, and maintainability."
+  },
+  {
+    "id": 5,
+    "question": "How do you ensure the quality of your deliverables?",
+    "answer": "We follow industry best practices including code reviews, testing protocols, and quality assurance processes. Our team conducts thorough testing across different devices and browsers to ensure optimal performance and user experience."
+  },
+  {
+    "id": 6,
+    "question": "What is your pricing structure?",
+    "answer": "Our pricing is project-based and depends on factors like complexity, features, and timeline. We provide detailed quotes after understanding your requirements. We believe in transparent pricing with no hidden costs."
+  }
+]

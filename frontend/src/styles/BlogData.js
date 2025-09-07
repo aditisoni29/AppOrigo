@@ -36,7 +36,7 @@ export const blogData = [
     category: "App Development",
     title: "Mobile App Development: Crafting Solutions for the Digital Age",
     date: "Feb 10, 2025",
-    showOnHome: true,
+    showOnHome: false,
     images: [
       "https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=2074&q=80"
     ],
@@ -52,7 +52,7 @@ export const blogData = [
     category: "Custom App Development",
     title: "From Idea to App store: A Complete guide for App Development ",
     date: "August 1, 2025",
-    showOnHome: true,
+    showOnHome: false,
     images: [
       "https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=2074&q=80",
     ],
@@ -77,7 +77,7 @@ export const blogData = [
     category: "Digital Marketing",
     title: "From Clicks to Answers: The Shift from SEO to AEO",
     date: "August 1, 2025",
-    showOnHome: true,
+    showOnHome: false,
     images: [
       "https://images.unsplash.com/photo-1626785774573-4b799315345d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2071&q=80",
     ],
@@ -149,7 +149,7 @@ export const blogData = [
       "5. Get Cited by AI Tools",
       "• Publish high-authority, evidence-based content.",
       "• Get backlinks from credible sites.",
-      "• Maintain a consistent knowledge graph presence (Google Business, Wikidata, Crunchbase, etc.)",
+      "C Maintain a consistent knowledge graph presence (Google Business, Wikidata, Crunchbase, etc.)",
       "",
       "5. Future trends in AEO !",
       "",
@@ -174,5 +174,168 @@ export const blogData = [
       "Every design is rooted in strategic storytelling that resonates with your target audience. Our designers conduct deep market research and competitor analysis to position your brand effectively. Whether you’re targeting B2B, SaaS, or D2C audiences, we ensure the visuals are aligned with your market positioning. We utilize psychology-backed color theory, typography balance, and clear visual hierarchy to craft compelling designs that are both memorable and functional.",
       "Beyond design delivery, we provide complete brand guidelines that empower your marketing, product, and content teams to scale visual assets consistently. Our collaborative design review process ensures stakeholder alignment before any finalization. AppOrigo’s design team becomes an extension of your brand, translating your company’s mission and values into highly professional, scalable visuals that drive growth and trust."
     ]
-  }
+  },
+
+  {
+  id: "geo-explained",
+  category: "Digital Marketing",
+  title: "GEO Explained: Winning Visibility in the Age of ChatGPT and AI Search",
+  date: "September 7, 2025",
+  showOnHome: true,
+  images: [
+    "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+  ],
+  content: [
+    "1) Introduction",
+    "In this blog, we’ll explore:",
+    "- What is Generative Engine Optimization (GEO)?",
+    "- GEO vs SEO vs AEO",
+    "- Importance of GEO",
+    "- How to do Generative Engine Optimization",
+
+    "2) What is Generative Engine Optimization (GEO)?",
+    "Generative Engine Optimization (GEO) is the practice of optimizing content for generative search engines like ChatGPT, Google’s Search Generative Experience (SGE), Perplexity, or Anthropic’s Claude.",
+    "Unlike Search Engine Optimization (SEO), which focuses on ranking web pages, GEO ensures that your products or services are discoverable and recommended directly inside AI-generated answers.",
+
+    "3) GEO vs SEO vs AEO",
+    "• SEO (Search Engine Optimization): Improves rankings through keywords, backlinks, and click-through rates.",
+    "• AEO (Answer Engine Optimization): Ensures products or services appear as direct answers to user queries through featured snippets or voice assistants like Siri and Alexa.",
+    "• GEO (Generative Engine Optimization): Positions brands as trusted recommendations inside AI-generated results on ChatGPT, Gemini, or Perplexity.",
+
+    " Example:",
+    "- SEO: Ranking a website for 'best running shoes in 2025' on Google.",
+    "- AEO: Appearing in Google’s featured snippet or Alexa’s response for 'which running shoes are good for flat feet.'",
+    "- GEO: Being mentioned inside ChatGPT’s or Perplexity’s AI-generated list of 'best running shoes for flat feet.'",
+
+    "4) Importance of GEO",
+
+    "• Change in User Behavior",
+    "Consumers are moving from Google search to AI assistants like ChatGPT, Gemini, and Copilot.",
+    "Instead of typing 'best web design agency near me,' they ask, 'Which web design agencies can help startups build an app?'",
+    "Without GEO, your brand risks being invisible in this new search environment.",
+
+    "• Zero-Click Answers",
+    "Generative engines often provide direct answers without redirecting users to websites.",
+    "Traditional SEO may fail if your brand isn’t part of the AI’s summarized responses.",
+    "GEO ensures your brand is embedded inside these answers.",
+
+    "• Trust and Authority",
+    "When AI engines recommend a brand, users perceive it as an unbiased endorsement.",
+    "Being included in generative answers enhances credibility and positions businesses as leaders.",
+
+    "• Voice and Conversational Search Growth",
+    "With smart assistants and voice queries on the rise, searches are increasingly conversational.",
+    "GEO aligns with this shift by optimizing for natural, intent-driven queries.",
+
+    "• Brand Discovery in New Channels",
+    "Generative engines pull from diverse sources — forums, social media, news, and niche blogs.",
+    "Optimizing for GEO increases the chance of being discovered across these ecosystems, not just Google.",
+
+    "• Long-Term Relevance",
+    "As generative search becomes mainstream, GEO will be as fundamental as SEO once was.",
+    "Businesses that delay adoption risk losing visibility to early adopters.",
+
+    "5) How to Do Generative Engine Optimization",
+
+    " 1. Manage Your Brand Narrative",
+    "Generative engines use existing content about your brand.",
+    "Maintain a clear, consistent, and authentic story that defines what you do, who you serve, and how you solve problems.",
+
+    " 2. Write Original and Authoritative Content",
+    "AI values depth, originality, and authority over keyword stuffing.",
+    "Publish expert insights, answer real questions, and create content that builds trust.",
+
+    " 3. Use Natural Queries, Not Just Keywords",
+    "Keywords still matter, but conversational and long-tail queries are even more important.",
+    "Example: Instead of 'CRM,' use 'best CRM for startups in 2025.'",
+
+    " 4. Make Content Easy to Read",
+    "Use headings, bullet points, and short paragraphs.",
+    "Readable content is easier for both people and AI engines to include in answers.",
+
+    " 5. Use Structured Data and Schema Markup",
+    "Add schema for FAQs, reviews, products, and articles.",
+    "Schema acts as a translator between your site and AI, boosting your chances of being included.",
+
+    " 6. Build Reputation and Authority",
+    "Encourage reviews, testimonials, and backlinks.",
+    "The stronger your reputation, the more likely AI engines will recommend your brand.",
+
+    " 7. Analyze and Monitor Performance",
+    "Track your brand’s presence in AI-generated answers regularly.",
+    "Use tools like HubSpot’s AI Search Grader or Perplexity to measure progress and adjust strategies."
+  ]
+},
+{
+  id: "digital-marketing-trends",
+  category: "Digital Marketing",
+  title: "What’s Next in Digital Marketing? Key Trends for Businesses",
+  date: "September 7, 2025",
+  showOnHome: true,
+  images: [
+    "https://images.unsplash.com/photo-1508385082359-f38ae991e8f2?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+  ],
+  content: [
+    " Introduction",
+    "The digital marketing landscape is constantly evolving. To survive and succeed, businesses must stay ahead of the fast-changing environment. Over the next few years, digital marketing is projected to become a trillion-dollar industry growing at a CAGR of 9%. With this growth, we will see significant evolution in AI, content creation, and social media platforms.",
+
+    " AI and Automation",
+    "AI has moved beyond being a trend — it is now a necessity reshaping the marketing industry. It provides marketers with efficiency, data-driven decision-making, and scalability.",
+    "- AI-powered campaigns: Able to recommend content ideas, conduct A/B testing, execute campaigns, handle large datasets efficiently, and optimize overall marketing performance.",
+    "- Predictive analytics and consumer insights: Will help forecast consumer needs and behaviors, enabling highly personalized marketing campaigns.",
+    "- Chatbots and conversational marketing: Enhance customer support by providing 24/7 service, improving both customer experience and business retention.",
+
+    " Content Marketing Evolution",
+    "Consumers are becoming more selective about the content they engage with, pushing businesses to create highly interactive and engaging experiences.",
+    "- Short-form video content: Platforms like TikTok, YouTube Shorts, and Meta Reels will continue to dominate as key engagement drivers.",
+    "- AI-generated content: Will become more common, though it may not always match the authenticity and engagement of user-generated content (UGC).",
+    "- User-Generated Content (UGC): Will remain central to trust-building as consumers rely more on peer recommendations than brand promotions.",
+    "- Personalized content experiences: AI will predict user behaviors and recommend tailored content to boost engagement and user satisfaction.",
+
+    " Social Media Shifts",
+    "Social media will remain a powerhouse and the central battleground for consumer attention. Key shifts include:",
+    "- Emerging platforms: Reddit is experiencing 40% YoY growth, and while Meta and Google remain dominant, niche-specific platforms will rise in importance.",
+    "- Influencer marketing: A shift toward micro and nano influencers is underway, as they offer relatable, high-quality content and stronger audience engagement.",
+    "- Data-driven social media marketing: Engagement, ROI, and behavioral insights will play a larger role in shaping strategies. This will lead to more personalized recommendations for users and trend analysis for creators.",
+
+    " Conclusion",
+    "Marketers and businesses that stay aligned with evolving digital marketing trends and continuously refine their strategies will not only survive but also achieve long-term growth."
+  ]
+},
+{
+  id: "ai-in-mobile-applications",
+  category: "Mobile Development",
+  title: "AI in Mobile Applications: Pros, Cons and Future Potential",
+  date: "September 7, 2025",
+  showOnHome: true,
+  images: [
+    "https://images.unsplash.com/photo-1558655146-d09347e92766?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+  ],
+  content: [
+    "Introduction",
+    "AI in app development is an emerging trend in the tech industry. It improves the efficiency of the development process by automating repetitive tasks such as coding and by integrating advanced technologies like predictive analytics and natural language processing. As a result, AI has significantly transformed the way applications are developed, tested, and deployed.",
+
+    "Advantages of AI in App Development",
+    "- Low cost: AI simplifies the app development process by automating coding tasks and offering recommendations through APIs. This saves both time and cost, making app creation faster and more affordable.",
+    "- Better customer support: AI-powered chatbots and virtual assistants provide 24/7 customer service. They respond quickly, offer tailored solutions based on past interactions, and improve customer engagement and retention.",
+    "- Personalized user experience: By analyzing user data, AI delivers more specific recommendations and tailored experiences, enhancing satisfaction and usability.",
+    "- Enhanced security: AI identifies hazards, bugs, and threats in real time. With predictive analytics and cybersecurity integrations, it provides stronger protection for applications.",
+    "- Faster launch: AI accelerates coding and testing workflows, enabling businesses to bring applications to market faster than traditional development methods.",
+
+    "Disadvantages of AI in App Development",
+    "- Data privacy and security concerns: AI requires large volumes of personal data, raising risks of data leaks, misuse, or unauthorized access.",
+    "- Lack of proper data: High-quality data is critical for AI performance. Obtaining and managing this data comes with high financial and legal costs.",
+    "- Complex AI algorithms: Running AI involves sophisticated algorithms that process vast amounts of data. Their complexity can result in higher costs and longer development times.",
+    "- Integration challenges: Incorporating AI into existing apps, infrastructures, and data centers requires significant resources and expertise.",
+    "- Ethical considerations: AI systems are trained on datasets that may carry biases. This can lead to biased outputs, legal risks, and ethical dilemmas for businesses.",
+
+    "Future Trends of AI in App Development",
+    "- AI and 5G integration: The rollout of 5G will enhance data transfer speeds, enabling more efficient AI-powered features in mobile applications.",
+    "- Conversational AI: Advanced chatbots and virtual assistants will become standard, providing businesses with continuous, personalized customer support.",
+    "- Advanced Natural Language Processing (NLP): Improvements in NLP will drive more natural conversational interfaces, boosting automation and user interaction.",
+    "- AI in cybersecurity: AI-powered security tools will provide faster and more effective protection against data breaches, malware, and system vulnerabilities."
+  ]
+}
+
+
 ];
