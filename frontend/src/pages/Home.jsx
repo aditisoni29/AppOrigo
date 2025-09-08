@@ -307,7 +307,7 @@ function Home() {
 
 
       {/* Careers Section */}
-      <section className="careers-section">
+      {/* <section className="careers-section">
         <div className="careers-container">
           <div className="careers-content">
             <h3>Your Talent, Our Mission,<br />Unlimited Potential</h3>
@@ -321,7 +321,7 @@ function Home() {
             <div className="image-overlay"></div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* FAQ Section */}
       <FAQ faqs={faqsData} />
