@@ -1,5 +1,4 @@
 import React from 'react';
-import AditiSoni from "../assets/Team/aditi.webp";
 import ChitranshSaxena from "../assets/Team/chitransh.webp";
 import VaishnaviParolia from "../assets/Team/vaishnavi.webp";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -11,17 +10,8 @@ import { Helmet } from "react-helmet";
 const About = () => {
   const team = [
     {
-      name: "Aditi Soni",
-      role: "Founder & CEO",
-      description:
-        "Leading purpose-driven innovation and transformative growth across emerging technologies with a visionary approach.",
-      imageUrl: AditiSoni,
-      linkedin: "https://www.linkedin.com/in/er-aditi-soni/",
-      instagram: "https://www.instagram.com/aadhi._.tea",
-    },
-    {
       name: "Chitransh Saxena",
-      role: "Co-Founder and CTO",
+      role: "Founder and CEO",
       description: "Driving technical vision by uniting design thinking with robust engineering to architect scalable, impactful digital solutions.",
       imageUrl: ChitranshSaxena,
       linkedin: "https://www.linkedin.com/in/chitranshatlkdin/",
@@ -45,7 +35,8 @@ const About = () => {
         <meta name="description" content="Learn about AppOrigo Technologies, our mission, vision, and the passionate team behind our innovative solutions." />
         <meta name="robots" content="index, follow" />
       </Helmet>
-      {/* Enhanced About Hero Section */}
+
+      {/* Hero Section */}
       <section className="about-hero">
         <div className="about-hero-content">
           <h1>About AppOrigo Technologies</h1>
@@ -62,13 +53,9 @@ const About = () => {
             <h2>OUR STORY</h2>
             <p>
               AppOrigo Technologies began as the brainchild of three college students, driven by a shared ambition to make a meaningful impact in the tech world. In 2025, we embarked on a journey to create a company that would redefine how technology can empower individuals and businesses alike. <br /><br />
-
               Our mission was clear from the start: to provide innovative, reliable, and affordable solutions that bridge the gap between the ever-evolving world of technology and its users. With a deep passion for coding and problem-solving, we set out to build a platform that could cater to the unique needs of startups and enterprises, making technology more accessible for all. <br /><br />
-
               At AppOrigo Technologies, we believe that technology should be a tool for growth and innovation. Our team worked tirelessly to develop cutting-edge solutions with a focus on simplicity, scalability, and customer-centricity. From our early days of brainstorming ideas to building the first version of our platform, every step has been a reflection of our commitment to excellence. <br /><br />
-
               We are more than just a tech company; we are a community of creators and collaborators, fostering an environment where knowledge-sharing and innovation thrive. Through workshops, open forums, and resources, we actively engage with our users, enabling them to grow and succeed alongside us. <br /><br />
-
               As we continue to evolve and expand, our vision remains unchanged: to help businesses and developers turn their ideas into reality with powerful, intuitive solutions. With the support of our growing community and a relentless drive to push the boundaries of what's possible, AppOrigo Technologies is on its way to becoming a transformative force in the tech industry.
             </p>
           </div>
@@ -100,95 +87,38 @@ const About = () => {
 
       {/* Team Section */}
       <section className="team-section">
-        <div className="team-container">
-          <h2>Meet Our Team</h2>
-          <p>A group of passionate individuals shaping the future, one step at a time.</p>
-          
-          <div className="team-grid">
-            {/* First Row - Aditi and Chitransh */}
-            <div className="team-row-1">
-              <div className="team-member-card">
-                <img src={team[0].imageUrl} alt={team[0].name} loading="lazy" />
-                <h3>{team[0].name}</h3>
-                <p>{team[0].role}</p>
-                <div className="description">{team[0].description}</div>
-                <div className="social-links">
-                  <a
-                    href={team[0].linkedin}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={`${team[0].name}'s LinkedIn`}
-                  >
-                    <FontAwesomeIcon icon={faLinkedinIn} size="lg" />
-                  </a>
-                  <a
-                    href={team[0].instagram}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={`${team[0].name}'s Instagram`}
-                  >
-                    <FontAwesomeIcon icon={faInstagram} size="lg" />
-                  </a>
-                </div>
-              </div>
-              
-              <div className="team-member-card">
-                <img src={team[1].imageUrl} alt={team[1].name} loading="lazy" />
-                <h3>{team[1].name}</h3>
-                <p>{team[1].role}</p>
-                <div className="description">{team[1].description}</div>
-                <div className="social-links">
-                  <a
-                    href={team[1].linkedin}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={`${team[1].name}'s LinkedIn`}
-                  >
-                    <FontAwesomeIcon icon={faLinkedinIn} size="lg" />
-                  </a>
-                  <a
-                    href={team[1].instagram}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={`${team[1].name}'s Instagram`}
-                  >
-                    <FontAwesomeIcon icon={faInstagram} size="lg" />
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            {/* Second Row - Vaishnavi only, centered */}
-            <div className="team-row-2" style={{ justifyContent: 'center', display: 'flex' }}>
-              <div className="team-member-card">
-                <img src={team[2].imageUrl} alt={team[2].name} loading="lazy" />
-                <h3>{team[2].name}</h3>
-                <p>{team[2].role}</p>
-                <div className="description">{team[2].description}</div>
-                <div className="social-links">
-                  <a
-                    href={team[2].linkedin}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={`${team[2].name}'s LinkedIn`}
-                  >
-                    <FontAwesomeIcon icon={faLinkedinIn} size="lg" />
-                  </a>
-                  <a
-                    href={team[2].instagram}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={`${team[2].name}'s Instagram`}
-                  >
-                    <FontAwesomeIcon icon={faInstagram} size="lg" />
-                  </a>
-                </div>
-              </div>
-            </div>
+  <div className="team-container">
+    <h2>Meet Our Team</h2>
+    <p>A group of passionate individuals shaping the future, one step at a time.</p>
+    <div
+      className="team-grid"
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        gap: "2rem",
+        flexWrap: "wrap"
+      }}
+    >
+      {team.map((member, index) => (
+        <div key={index} className="team-member-card">
+          <img src={member.imageUrl} alt={member.name} loading="lazy" />
+          <h3>{member.name}</h3>
+          <p>{member.role}</p>
+          <div className="description">{member.description}</div>
+          <div className="social-links">
+            <a href={member.linkedin} target="_blank" rel="noopener noreferrer">
+              <FontAwesomeIcon icon={faLinkedinIn} size="lg" />
+            </a>
+            <a href={member.instagram} target="_blank" rel="noopener noreferrer">
+              <FontAwesomeIcon icon={faInstagram} size="lg" />
+            </a>
           </div>
         </div>
-      </section>
-      <img src={AditiSoni} alt="about apporigo technologies founder" style={{display:'none'}} />
+      ))}
+    </div>
+  </div>
+</section>
+
     </div>
   );
 };

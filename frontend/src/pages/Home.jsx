@@ -10,7 +10,7 @@ import { motion } from "framer-motion";
 import { Helmet } from "react-helmet";
 import FAQ from "../components/FAQ";
 import faqsData from "../data/faqs.json";
-
+import NewProfile from "../assets/testimonials/new-profile.png";
 
 function Home() {
   return (
@@ -235,10 +235,10 @@ function Home() {
                 </p>
               </div>
               <div className="testimonial-author">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWfOdWoerP5UOJ3nqzmAl8squti1cxu9lIFw&s" alt="John Smith" loading="lazy" />
-                <div className="author-info">
-                  <h4>Adv. Arvind Soni</h4>
-                  <p>CEO, Arvind Soni & Associates</p>
+                <img src={NewProfile} alt="New Client" loading="lazy" />
+                  <div className="author-info">
+                  <h4>Priya Mehta</h4>
+                  <p>Founder, Mehta Enterprises</p>
                 </div>
               </div>
             </div>
