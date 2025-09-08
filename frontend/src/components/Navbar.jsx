@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Phone } from "lucide-react";
+import { Menu, X, ChevronDown, Phone } from "lucide-react";
 import Dropdown from "./Dropdown";
 import newCompanyLogo from "../assets/fdgcfghgzs.webp";
 
@@ -25,7 +25,7 @@ const Navbar = () => {
     handleResize();
     window.addEventListener("resize", handleResize);
     window.addEventListener("scroll", handleScroll);
-
+    
     return () => {
       window.removeEventListener("resize", handleResize);
       window.removeEventListener("scroll", handleScroll);
@@ -40,8 +40,11 @@ const Navbar = () => {
     { path: "/contact", label: "Contact" }
   ];
 
+  const PHONE_NUMBER = "+91 7742716633";
+  const PHONE_TEL = "tel:+917742716633";
+
   return (
-    <nav className={`navbar-container ${scrolled ? "navbar-scrolled" : ""}`}>
+    <nav className={`navbar-container ${scrolled ? 'navbar-scrolled' : ''}`}>
       <div className="navbar-content">
         {/* Logo Section */}
         <div className="navbar-logo">
@@ -66,9 +69,7 @@ const Navbar = () => {
               <Link
                 key={index}
                 to={link.path}
-                className={`nav-link ${
-                  location.pathname === link.path ? "nav-link-active" : ""
-                }`}
+                className={`nav-link ${location.pathname === link.path ? 'nav-link-active' : ''}`}
               >
                 <span className="nav-link-text">{link.label}</span>
                 <div className="nav-link-underline"></div>
@@ -76,18 +77,18 @@ const Navbar = () => {
             ))}
             <Dropdown title="About" links={["About", "Mission"]} isMobile={false} />
           </div>
-
-          {/* Click-to-Contact Button for Desktop */}
-          <Link
-            to="/contact"
-            className="navbar-cta-button pulse contact-us-desktop"
-            aria-label="Go to Contact Page"
+          {/* Click-to-Call Button for Desktop */}
+          <a
+            href={PHONE_TEL}
+            className="navbar-cta-button pulse call-now-desktop"
+            aria-label={`Call us now at ${PHONE_NUMBER}`}
             tabIndex={0}
           >
-            <Phone size={18} style={{ marginRight: "0.5rem" }} aria-hidden="true" />
-            <span className="contact-us-text">Contact Us</span>
-          </Link>
-        </div> {/* ✅ Closed desktop-menu here */}
+            <Phone size={18} style={{marginRight: '0.5rem'}} aria-hidden="true" />
+            <span className="call-now-text">Call Now</span>
+            {/* <span className="call-now-number">{PHONE_NUMBER}</span> */}
+          </a>
+        </div>
 
         {/* Mobile Menu Toggle */}
         <div className="mobile-toggle">
@@ -105,40 +106,38 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Menu */}
-      <div className={`mobile-menu ${isOpen ? "mobile-menu-open" : ""}`}>
+      <div className={`mobile-menu ${isOpen ? 'mobile-menu-open' : ''}`}>
         <div className="mobile-menu-content">
           <div className="mobile-nav-links">
-            {[...navLinks, { path: "/about", label: "About" }, { path: "/mission", label: "Mission" }].map(
-              (link, index) => (
-                <Link
-                  key={index}
-                  to={link.path}
-                  onClick={() => setIsOpen(false)}
-                  className={`mobile-nav-link ${
-                    location.pathname === link.path ? "mobile-nav-link-active" : ""
-                  }`}
-                >
-                  <span className="mobile-nav-text">{link.label}</span>
-                  <div className="mobile-nav-indicator"></div>
-                </Link>
-              )
-            )}
+            {[...navLinks, { path: "/about", label: "About" }, { path: "/mission", label: "Mission" }].map((link, index) => (
+              <Link
+                key={index}
+                to={link.path}
+                onClick={() => setIsOpen(false)}
+                className={`mobile-nav-link ${location.pathname === link.path ? 'mobile-nav-link-active' : ''}`}
+              >
+                <span className="mobile-nav-text">{link.label}</span>
+                <div className="mobile-nav-indicator"></div>
+              </Link>
+            ))}
           </div>
         </div>
-        <div
-          className="mobile-menu-overlay"
-          onClick={() => setIsOpen(false)}
-        ></div>
+        <div className="mobile-menu-overlay" onClick={() => setIsOpen(false)}></div>
       </div>
 
-      {/* Sticky Contact Us Button for Mobile */}
-      <Link
-        to="/contact"
-        className="contact-us-mobile"
-        aria-label="Go to Contact Page"
+      {/* Sticky Click-to-Call Button for Mobile */}
+      <a
+        href={PHONE_TEL}
+        className="call-now-mobile"
+        aria-label={`Call us now at ${PHONE_NUMBER}`}
         tabIndex={0}
       >
-      </Link>
+        <Phone size={22} aria-hidden="true" />
+        <span className="call-now-text" style={{display: 'none'}}>
+          Call Now
+        </span>
+        {/* <span className="call-now-number">{PHONE_NUMBER}</span> */}
+      </a>
     </nav>
   );
 };
