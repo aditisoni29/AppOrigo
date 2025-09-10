@@ -19,7 +19,7 @@ const Navbar = () => {
     };
 
     const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
+      setScrolled(window.scrollY > 20);kk
     };
 
     handleResize();
@@ -41,7 +41,8 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className={`navbar-container ${scrolled ? "navbar-scrolled" : ""}`}>
+<nav className={`navbar-container ${scrolled ? "navbar-scrolled" : ""}`}>
+
       <div className="navbar-content">
         {/* Logo Section */}
         <div className="navbar-logo">
@@ -105,7 +106,8 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Menu */}
-      <div className={`mobile-menu ${isOpen ? "mobile-menu-open" : ""}`}>
+<div className={`mobile-menu ${isOpen ? "mobile-menu-open" : ""}`}>
+
         <div className="mobile-menu-content">
           <div className="mobile-nav-links">
             {[...navLinks, { path: "/about", label: "About" }, { path: "/mission", label: "Mission" }].map(
