@@ -28,5 +28,10 @@
     "id": 6,
     "question": "What is your pricing structure?",
     "answer": "Our pricing is project-based and depends on factors like complexity, features, and timeline. We provide detailed quotes after understanding your requirements. We believe in transparent pricing with no hidden costs."
-  }
+  },
+   {
+    "id": 7,
+    "question": "How do you handle communication during a project?",
+    "answer": "We prioritize clear and consistent communication throughout the project. Regular updates are shared via email, video calls, or project management tools like Trello or Jira. You'll always be informed about progress, milestones, and any important decisions."
+}
 ]
